@@ -16,11 +16,17 @@
 
 2. Sean los vocabularios $V = \lbrace i, x\rbrace$ y $W = \lbrace i, v, c \rbrace$. Defina por extensión:
 
-   a) $V^3 = \lbrace iii, iix, ixi, ixx, xii, xix, xxi, xxx \rbrace$
+   a) $V^3 = \lbrace iii, iix, ixi, ixx, xii, xix, xxi, xxx \rbrace$​
 
-   b) $W^* = { \lambda, i, v, c, iv, ic, vvc, ccv, iic, ...}$
+   $V^3$ es el conjunto de todas las posibles cadenas de longitud 3 que se puede obtener utilizando los símbolos del vocabulario $V$.
+
+   b) $W^* = \lbrace \lambda, i, v, c, iv, ic, vvc, ccv, iic, ...\rbrace$
+
+   $W^*$ es el *cierre* o *clausura*, que se forma por la unión del *cierre* o *clausura positiva* a la cadena vacía $(\lambda-\epsilon)$
 
    c) $V \cdot W = \lbrace ii, iv, ic, xi, xv, xc \rbrace$
+
+   $V \cdot W$ es el conjunto de todas las posibles cadenas formadas por los elementos del vocabulario $V$ seguidas por los símbolos de $W$.
 
 3. Sean $A$ y $B$ dos lenguajes, formados por las cadenas: $A = \lbrace hola, adios \rbrace$ y $B = \lbrace casa \rbrace$ , entonces indicar el resultado de la operación de concatenación $ A \cdot B$​ 
 
@@ -38,15 +44,21 @@
 
 5. Sean $A$ y  $B$ lenguajes sobre el alfabeto $\sum$ formados  $A = \lbrace a, b, c, d, e \rbrace$ y $B=\lbrace 0,1,2,3,4 \rbrace$ indicar el resultado de $A \cup B$.
 
-   $A \cup B = \lbrace a, b, c, d, e, 0, 1, 2, 3, 4\rbrace$
+   $A \cup B = \lbrace a, b, c, d, e, 0, 1, 2, 3, 4\rbrace$​
+
+   $A \cup B$ es el conjunto formado por todas las palabras que pertenezcan a los lenguajes $A$ y $B$.
 
 6. Sean $A$ y  $B$ lenguajes sobre el alfabeto $\sum$ formados  $A = \lbrace a, b, c, d, e \rbrace$ y $B=\lbrace 0,1,2,3,4 \rbrace$ indicar el resultado de $A \cap B$.
 
-   $A \cap B = \lbrace \emptyset\rbrace$
+   $A \cap B = \lbrace \emptyset\rbrace$​
+
+   $A \cap B $ es el conjunto de todas las palabras que pertenecen a ambos lenguajes, en este caso no existen palabras por lo que el conjunto obtenido es el $ \lbrace \emptyset\rbrace$.​
 
 7. Sea $A = \lbrace hola, raro\rbrace$, entonces indicar el resultado de  $A^R$ o $A^{-1}$ 
 
-   $A^R =  A^{-1}= \lbrace raro, hola\rbrace$
+   $A^R =  A^{-1}= \lbrace raro, hola\rbrace$​​
+
+   $A^R$ o  $A^{-1}$ indican que se debe aplicar la **reflexión** a $A$.
 
  8. Sea $\lbrace 000 \rightarrow 010, 10 \rightarrow 01\rbrace$ para la palabra $1010$​, obtenga las derivaciones a derecha.
 
@@ -106,4 +118,6 @@
 
 12. Para el caso anterior indicar la secuencia de palabras que se obtienen hasta que ya no sea posible aplicar la regla.
 
-    $0\underline{B}1 \rightarrow 00A01$
+    $0\underline{B}1 \rightarrow 00A01$​
+    
+    Se obtiene la misma palabra ya que es imposible aplicar nuevamente la regla $B \rightarrow 0A0$.
