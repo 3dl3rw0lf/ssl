@@ -86,7 +86,7 @@
 
     Ejemplo dos: derivación por izquierda
 
-    $A \implies a\space \underline{B}\space C \implies a \space b \space bas \space \underline{C}\implies a \space b \space bas$}
+    $A \implies a\space \underline{B}\space C \implies a \space b \space bas \space \underline{C}\implies a \space b \space bas$
 
     En el ejemplo uno, la derivación se dice que es una derivación por derecha, por que siempre se deriva el **<u>no terminal situado</u>** más a la derecha. En el ejemplo dos es una derivación por la izquierda.
 
