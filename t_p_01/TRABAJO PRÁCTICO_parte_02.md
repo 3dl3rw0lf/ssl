@@ -87,25 +87,27 @@
 
     `<ModDeclaration>::= <MODULE> 'ident' ['priority'] ';' {<Import>} <Block>  'ident''.' `
 
-26. Exprese el equivalente del siguiente diagrama sintáctico, en notación EBNF: **Declaration**
+26. Exprese el equivalente del siguiente diagrama sintáctico, en notación EBNF:
 
-    ![Diagrama en blanco](D:\UTN\ssl\TP_github\ssl\t_p_01\Diagrama en blanco.png) 
+    **Declaration**
 
-27. *Dibuje el diagrama sintáctico equivalente*:
+    ![Diagrama sintáctico Declaration](https://github.com/3dl3rw0lf/ssl/blob/main/t_p_01/Diagrama%20en%20blanco.png) 
+
+28. *Dibuje el diagrama sintáctico equivalente*:
 
     `<list> ::= <alternative> { ‘|’ <alternative> }[ <else>  ] `
 
-28. *Exprese el equivalente del siguiente diagrama sintáctico, en notación EBNF y BNF:*
+29. *Exprese el equivalente del siguiente diagrama sintáctico, en notación EBNF y BNF:*
 
     **Named constant** 
 
-    ![Diagrama en blanco (2)_](D:\UTN\ssl\TP_github\ssl\t_p_01\Diagrama en blanco (2)_.png)
+    ![Diagrama sintáctico](https://github.com/3dl3rw0lf/ssl/blob/main/t_p_01/Diagrama%20en%20blanco%20(2)_.png)
 
-29. Re-escriba la expresión en notaciones pre y post fija. Dibuje el árbol de *evaluación*.
+30. Re-escriba la expresión en notaciones pre y post fija. Dibuje el árbol de *evaluación*.
 
     $(x1 + x2) – x3 + (x4 / x5 + x6)$
 
-30. *Re-escriba las expresiones en notaciones pre y post fija. Dibuje el árbol de evaluación.* 
+31. *Re-escriba las expresiones en notaciones pre y post fija. Dibuje el árbol de evaluación.* 
 
     $a + b * c / d$
 
