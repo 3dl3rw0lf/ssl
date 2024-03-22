@@ -1,0 +1,160 @@
+## TRABAJO PRÁCTICO 
+
+# B. GRAMÁTICAS Y LENGUAJES 
+
+13. Defina los conjuntos $P$ de la gramática de $G =  (\lbrace S, A, B, C\rbrace, \lbrace0, 1\rbrace, S, P )$ que reconozca: 
+
+    $0 0 1 0 1 0$​ 
+
+    **Respuesta**:
+
+    $P = \lbrace S \rightarrow A10, A \rightarrow B10, B \rightarrow C0, C \rightarrow 0\rbrace$
+
+    *Explicación*:
+
+    + Se debe crear el conjunto $P$ formado por las producciones que generen la secuencia de caracteres $001010$.
+    + Estas producciones o reglas de derivación son aplicadas de la siguiente manera para reconocer la cadena:
+      + Partimos del axioma "$S$" aplicando la regla de producción $S \rightarrow A10$ produciendo $A10$.
+      + Aplicamos a ese resultado la regla $A \rightarrow B10$ y obtenemos $B1010$.
+      + Luego aplicamos $B \rightarrow C0$ produciendo $C01010$.
+      + Luego aplicamos $C \rightarrow 0$ reconociendo así la cadena solicitada $001010$.
+
+14. Defina los conjuntos $P$ de la gramática de $G = ( \lbrace S, A, B, C\rbrace, \lbrace0, 1\rbrace, S, P )$ que reconozca: 
+
+    $0 0 0 1 0 1$ 
+
+15. Definir las reglas de una gramática *Tipo 2* en base a la especificación dada, que reconozca el lenguaje: 
+
+    $L1 = \lbrace wn cwn / w \in \lbrace a, b\rbrace n > 0\rbrace$
+
+    $G1 = (\lbrace A, S\rbrace, \lbrace a, b, c\rbrace, P, S)$ 
+
+16. Defina las reglas de producción para el lenguaje: $L1 = \lbrace a^{n}\space c \space b^{m} / n > 0 y m ≥ 0 \rbrace$ 
+
+17. Para la especificación dada dibuje el árbol de derivación para: $a \space a \space c \space b \space b$ 
+
+    $P = \lbrace e0 \rightarrow  a e1, e1 \rightarrow  a e1 | c e2, e2 \rightarrow b e2 | λ \rbrace$
+
+18. *Sea la cuádrupla es $G = (\lbrace S,A,B\rbrace, \lbrace0, 1\rbrace, P, S)$ con el siguiente conjunto de producciones, indique 3 cadenas válidas diferentes y dibuje los respectivos árboles de derivación:* 
+
+    $P : \lbrace S \rightarrow A1B, A \rightarrow 0A | λ, B \rightarrow 0B | 1B | λ \rbrace$
+
+19. Dibuje el árbol de derivación para la cadena $z = (x + y) * z$ correspondiente a la siguiente gramática: 
+
+    $ASSIGN \rightarrow ID \prime=\prime EXPR$ 
+
+    $ID \rightarrow ‘x’ | ‘y’ | ‘z’$ 
+
+    $EXPR \rightarrow ID ‘+’ EXPR | EXPR ‘*’ ID | ‘(‘ EXPR’)’ | ID *$
+
+20. *Verificar si la siguiente gramática, genera cadenas ambiguas, en cuyo caso dar los ejemplos.*
+
+    $G = (\lbrace ‘a’, ‘+’, ‘*’, ‘(‘, ‘)’\rbrace, \lbrace S\rbrace, S, P)$ 
+
+    $P = \lbrace S := ‘a’, S := S ‘+’ S, S := S * S, S := S\rbrace$
+
+21. Construya una gramática regular no ambigua que genere todas las cadenas de $0$ y $1$ en las cuales los $0$, si aparecen, lo hacen en grupos individuales de a tres. 
+
+    Ej. cadenas que pertenecen al lenguaje Ej. cadenas que NO pertenecen al lenguaje $1,11111, 000, 1000, 1110001000$                          $0, 00, 11000011, 000000, 000100$ 
+
+22. *Escriba las reglas de producción para la gramática $G_1$, no ambigua, que reconoce el lenguaje $L_1$*. $G_1 = (\lbrace A\rbrace, \lbrace a, b, c\rbrace, P, S_1)$ $L_1 = \lbrace wcw^{R} / w \in \lbrace a | b\rbrace y R > 0\rbrace$ 
+
+23. Completar las reglas de producción para la gramática. 
+
+    Sea $G = (\lbrace A, B\rbrace, \lbrace a\rbrace, P, S)$ una gramática regular lineal a derecha que genera $L = \lbrace a^{2n} / n ≥ 0\rbrace$
+
+    $S\rightarrow ε$                                                                           $S \rightarrow ?$
+
+    $A\rightarrow aB$                                                                      $A\rightarrow ? $
+
+    $B\rightarrow ?$
+
+24. *Completar las reglas de producción para la gramática.* 
+
+    Sea $G = ({A, B, C}, {0, 1, 2, 3}, P, S)$ *que genera*: $L = {0i 1i+k 2k 3n+1 / i, k, n ≥ 0 }$ 
+
+    $S\rightarrow ABC$                                                                 $S\rightarrow ?$ 
+
+    $S\rightarrow BC$                                                                    $S\rightarrow ?$ 
+
+    $A\rightarrow 0A1$                                                                  $A\rightarrow ?$ 
+
+    $B\rightarrow 1B2$                                                                  $B\rightarrow ?$ 
+
+    $C\rightarrow 3C$                                                                    $C\rightarrow ?$ 
+
+25. Dibuje el diagrama sintáctico equivalente: 
+
+    `<ModDeclaration>::= <MODULE> 'ident' ['priority'] ';' {<Import>} <Block>  'ident''.' `
+
+26. Exprese el equivalente del siguiente diagrama sintáctico, en notación EBNF: **Declaration**
+
+    ![Diagrama en blanco](D:\UTN\ssl\05.gramaticas_y_lenguajes\04.TP G_y_L\Diagrama en blanco.png) 
+
+27. *Dibuje el diagrama sintáctico equivalente*:
+
+    `<list> ::= <alternative> { ‘|’ <alternative> }[ <else>  ] `
+
+28. *Exprese el equivalente del siguiente diagrama sintáctico, en notación EBNF y BNF:*
+
+    **Named constant** 
+
+    ![Diagrama en blanco (2)_](D:\UTN\ssl\05.gramaticas_y_lenguajes\04.TP G_y_L\Diagrama en blanco (2)_.png)
+
+29. Re-escriba la expresión en notaciones pre y post fija. Dibuje el árbol de *evaluación*.
+
+    $(x1 + x2) – x3 + (x4 / x5 + x6)$
+
+30. *Re-escriba las expresiones en notaciones pre y post fija. Dibuje el árbol de evaluación.* 
+
+    $a + b * c / d$
+
+     $a * (b + c / 3) * d – k$ 
+
+    $(b / 2 + b * b – 4 * x – 2 * y) / (2 + a)$
+
+    
+
+Marcar las afirmaciones verdaderas:
+Seleccione una:
+
+L = {a^n b^n / n>= 0} es regular
+Ninguna
+L = {a^n / sólo si n es primo} es regular
+Si $\$= {0, 1} entonces L : {ww I w e es regular
+
+EI complemento de LI es
+Seleccione una:
+
+el conjunto de todas aquellas palabras producibles sobre el alfabeto de LI
+el conjunto de todas aquellas palabras producibles sobre el alfabeto de LI que no pertenecen al lenguaje
+el conjunto de todas aquellas palabras no producibles sobre el alfabeto de LI
+Ninguna
+el conjunto de todas aquellas palabras producibles sobre el alfabeto de LI incluído el vacío
+
+ $\overline{L}$
+
+Con los símbolos del alfabeto E se forman cadenas, frases o palabras que se denotan por la letra w.
+Algunas operaciones entre palabras son la concatenación y la inversa.
+Entonces qué afirmaciones son válidas para estas dos propiedades.
+Seleccione una o más de una:
+w.À = À.w = W
+EI Palíndromo se puede definir como: (w = wR)•
+Se cumple que w * V w
+Se cumple que Iw1.w2 | * Iw1 I + Iw2 |
+La concatenación por ejemplo no tiene la propiedad conmutativa, es decir: w1w2 * w2 w1 .
+
+
+
+Cuáles son definiciones válidas para describir un conjunto finito de cadenas sobre eI alfabeto E:
+Seleccione una o más de una:
+
+E^+
+
+a^k pertenece E para todo k
+
+{ a^i / 0 <i < n pertenece E}
+
+E^* U E^+
+
+vacio pertenece E^* doble implicación a pertenece a E^+ y w pertence a E^* implica wa pertence a E^**
