@@ -41,6 +41,13 @@
 
     $P = \lbrace e0 \rightarrow  a e1, e1 \rightarrow  a e1 | c e2, e2 \rightarrow b e2 | λ \rbrace$
 
+```mermaid
+graph TD;
+    e_1-->a;
+    e_1-->e_1;
+    B-->D;
+    C-->D;
+```
 18. *Sea la cuádrupla es $G = (\lbrace S,A,B\rbrace, \lbrace0, 1\rbrace, P, S)$ con el siguiente conjunto de producciones, indique 3 cadenas válidas diferentes y dibuje los respectivos árboles de derivación:* 
 
     $P : \lbrace S \rightarrow A1B, A \rightarrow 0A | λ, B \rightarrow 0B | 1B | λ \rbrace$
