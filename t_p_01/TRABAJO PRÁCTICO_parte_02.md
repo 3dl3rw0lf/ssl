@@ -89,7 +89,7 @@
 
 26. Exprese el equivalente del siguiente diagrama sintáctico, en notación EBNF: **Declaration**
 
-    ![Diagrama en blanco](D:\UTN\ssl\TP_github\ssl\t_p_01\Diagrama en blanco.png) 
+    ![Diagrama en blanco](https://github.com/3dl3rw0lf/ssl/blob/main/t_p_01/Diagrama%20en%20blanco.png) 
 
 27. *Dibuje el diagrama sintáctico equivalente*:
 
@@ -99,7 +99,7 @@
 
     **Named constant** 
 
-    ![Diagrama en blanco (2)_](D:\UTN\ssl\TP_github\ssl\t_p_01\Diagrama en blanco (2)_.png)
+    ![Diagrama en blanco (2)_](https://github.com/3dl3rw0lf/ssl/blob/main/t_p_01/Diagrama%20en%20blanco%20(2)_.png)
 
 29. Re-escriba la expresión en notaciones pre y post fija. Dibuje el árbol de *evaluación*.
 
