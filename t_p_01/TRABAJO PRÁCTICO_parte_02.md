@@ -21,11 +21,17 @@
 
 14. Defina los conjuntos $P$ de la gramática de $G = ( \lbrace S, A, B, C\rbrace, \lbrace0, 1\rbrace, S, P )$ que reconozca: 
 
-    $0 0 0 1 0 1$ 
+    $0 0 0 1 0 1$​ 
+
+    $P = \lbrace S \rightarrow A01, A \rightarrow B1, B \rightarrow C0, C \rightarrow C0 | 0 \rbrace$
+
+    
+
+    $S \rightarrow \underline{A}01 \rightarrow \underline{B}101 \rightarrow \underline{C}0101 \rightarrow \underline{C}00101 \rightarrow 000101$
 
 15. Definir las reglas de una gramática *Tipo 2* en base a la especificación dada, que reconozca el lenguaje: 
 
-    $L1 = \lbrace wn cwn / w \in \lbrace a, b\rbrace n > 0\rbrace$
+    $L1 = \lbrace w^n cw^n / w \in \lbrace a, b\rbrace n > 0\rbrace$
 
     $G1 = (\lbrace A, S\rbrace, \lbrace a, b, c\rbrace, P, S)$ 
 
