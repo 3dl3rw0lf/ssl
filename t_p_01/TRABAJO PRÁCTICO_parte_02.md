@@ -33,7 +33,50 @@
 
     $L1 = \lbrace w^n cw^n / w \in \lbrace a, b\rbrace n > 0\rbrace$
 
-    $G1 = (\lbrace A, S\rbrace, \lbrace a, b, c\rbrace, P, S)$ 
+    $G1 = (\lbrace A, S\rbrace, \lbrace a, b, c\rbrace, P, S)$​ 
+
+    a. Al definir una gramática, lo primero es analizar "la forma" de la cadena que se debe generar. En este caso, a izquierda y derecha de $c$ debe aparecer la misma subcadena, con la misma cantidad de símbolos $n>0$.
+
+    b. La cantidad de $w$ está formada por los símbolos $a$ y $b$ según indica en la restricción $w \in \lbrace a,b\rbrace$.
+
+    c. Se definen los símbolos terminales $\lbrace a,b,c\rbrace$ y no-terminales $\lbrace A,S \rbrace$, el conjunto $P$ debe incluir esos dos símbolos no-terminales.
+
+    d. Finalmente sólo queda escribir el conjunto $P$ de reglas de producción.
+
+    Definir las reglas de producción del conjunto $P$ es un proceso similar a diseñar un algoritmo, es decir, que hay que  definir reglas que generen lo que se busca obtener como resultado. 
+
+    En este caso, vamos a definir el axioma de modo tal que garantice que a izquierda y derecha de $c$ genere la misma subcadena.
+
+    $S \rightarrow a\space S \space a\space |\space b\space S\space b$
+
+    Este axioma presenta recursión infinita.
+
+    Por lo tanto es necesario plantear esta segunda versión de $S$, que no sea recursiva.
+
+    $S \rightarrow a\space A \space a\space |\space b\space A\space b$
+
+    $A \rightarrow c$
+
+    Ejemplo de árbol generador
+
+    ```startuml
+    @startuml
+    
+    state fork_state <<fork>>
+    [*] --> fork_state
+    fork_state --> State2
+    fork_state --> State3
+    
+    state join_state <<join>>
+    State2 --> join_state
+    State3 --> join_state
+    join_state --> State4
+    State4 --> [*]
+    
+    @enduml
+    ```
+
+    
 
 16. Defina las reglas de producción para el lenguaje: $L1 = \lbrace a^{n}\space c \space b^{m} / n > 0 y m ≥ 0 \rbrace$ 
 
@@ -43,8 +86,8 @@
 
 ```mermaid
 graph TD;
-    e_1-->a;
-    e_1-->e_1;
+    e_1 -->a;
+    e_1 -->e_1;
     B-->D;
     C-->D;
 ```
@@ -127,3 +170,6 @@ graph TD;
     $(b / 2 + b * b – 4 * x – 2 * y) / (2 + a)$
 
     
+
+
+
