@@ -59,24 +59,21 @@
 
     Ejemplo de árbol generador
 
-    ```plantuml
-    @startuml
-    
-    state fork_state <<fork>>
-    [*] --> fork_state
-    fork_state --> State2
-    fork_state --> State3
-    
-    state join_state <<join>>
-    State2 --> join_state
-    State3 --> join_state
-    join_state --> State4
-    State4 --> [*]
-    
-    @enduml
+    ```mermaid
+    graph TD;
+        A[S] --> B[a];
+        A[S] --> D[S];
+        A[S] --> C[a];
+        D[D] --> E[b];
+        D[D] --> F[S];
+        D[D] --> G[b];
+        F[S] --> H[a]
+        F[S] --> I[A]
+        F[S] --> J[a]
+        I[A] --> K[c]
     ```
 
-    
+    Cadena generada $a\space b\space a\space c\space a\space b\space a\$
 
 16. Defina las reglas de producción para el lenguaje: $L1 = \lbrace a^{n}\space c \space b^{m} / n > 0 y m ≥ 0 \rbrace$ 
 
