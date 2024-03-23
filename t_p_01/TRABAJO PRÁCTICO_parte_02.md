@@ -79,14 +79,21 @@
 
 17. Para la especificación dada dibuje el árbol de derivación para: $a \space a \space c \space b \space b$ 
 
-    $P = \lbrace e0 \rightarrow  a e1, e1 \rightarrow  a e1 | c e2, e2 \rightarrow b e2 | λ \rbrace$
+    $P = \lbrace e0 \rightarrow  a e1, e1 \rightarrow  a e1 | c e2, e2 \rightarrow b e2 | \lambda \rbrace$
 
 ```mermaid
 graph TD;
-    e_1 -->a;
-    e_1 -->e_1;
-    B-->D;
-    C-->D;
+	A[e_0] --> B[a];
+	A[e_0] --> C[e_1];
+    C[e_1] --> D[a];
+    C[e_1] --> E[e_1];
+    E[e_1] --> F[c];
+    E[e_1] --> G[e_2];
+    G[e_2] --> H[b];
+    G[e_2] --> I[e_2];
+    I[e_2] --> J[b];
+    I[e_2] --> K[e_2];
+    K[e_2] --> L[λ]
 ```
 18. *Sea la cuádrupla es $G = (\lbrace S,A,B\rbrace, \lbrace0, 1\rbrace, P, S)$ con el siguiente conjunto de producciones, indique 3 cadenas válidas diferentes y dibuje los respectivos árboles de derivación:* 
 
