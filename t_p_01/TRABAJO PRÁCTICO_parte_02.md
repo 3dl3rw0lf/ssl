@@ -64,13 +64,14 @@
         A[S] --> B[a];
         A[S] --> D[S];
         A[S] --> C[a];
-        D[D] --> E[b];
-        D[D] --> F[S];
-        D[D] --> G[b];
+        D[S] --> E[b];
+        D[S] --> F[S];
+        D[S] --> G[b];
         F[S] --> H[a];
         F[S] --> I[A];
         F[S] --> J[a];
         I[A] --> K[c];
+     
     ```
 
     Cadena generada $a\space b\space a\space c\space a\space b\space a$
@@ -85,15 +86,15 @@
 graph TD;
 	A[e_0] --> B[a];
 	A[e_0] --> C[e_1];
-    C[e_1] --> D[a];
-    C[e_1] --> E[e_1];
-    E[e_1] --> F[c];
-    E[e_1] --> G[e_2];
-    G[e_2] --> H[b];
-    G[e_2] --> I[e_2];
-    I[e_2] --> J[b];
-    I[e_2] --> K[e_2];
-    K[e_2] --> L[λ]
+	C[e_1] --> D[a];
+	C[e_1] --> E[e_1];
+	E[e_1] --> F[c];
+	E[e_1] --> G[e_2];
+	G[e_2] --> H[b];
+	G[e_2] --> I[e_2];
+	I[e_2] --> J[b];
+	I[e_2] --> K[e_2];
+	K[e_2] --> L[λ]
 ```
 18. *Sea la cuádrupla es $G = (\lbrace S,A,B\rbrace, \lbrace0, 1\rbrace, P, S)$ con el siguiente conjunto de producciones, indique 3 cadenas válidas diferentes y dibuje los respectivos árboles de derivación:* 
 
