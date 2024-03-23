@@ -59,7 +59,7 @@
 
     Ejemplo de árbol generador
 
-    ```startuml
+    ```plantuml
     @startuml
     
     state fork_state <<fork>>
