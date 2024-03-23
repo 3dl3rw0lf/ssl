@@ -59,7 +59,7 @@
 
     Ejemplo de árbol generador
 
-    ```mermaid
+```mermaid
     graph TD;
         A[S] --> B[a];
         A[S] --> D[S];
@@ -71,7 +71,7 @@
         F[S] --> I[A];
         F[S] --> J[a];
         I[A] --> K[c];
-    ```
+```
 
     Cadena generada $a\space b\space a\space c\space a\space b\space a$
 
