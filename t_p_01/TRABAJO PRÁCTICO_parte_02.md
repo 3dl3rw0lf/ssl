@@ -67,13 +67,13 @@
         D[D] --> E[b];
         D[D] --> F[S];
         D[D] --> G[b];
-        F[S] --> H[a]
-        F[S] --> I[A]
-        F[S] --> J[a]
-        I[A] --> K[c]
+        F[S] --> H[a];
+        F[S] --> I[A];
+        F[S] --> J[a];
+        I[A] --> K[c];
     ```
 
-    Cadena generada $a\space b\space a\space c\space a\space b\space a\$
+    Cadena generada $a\space b\space a\space c\space a\space b\space a$
 
 16. Defina las reglas de producción para el lenguaje: $L1 = \lbrace a^{n}\space c \space b^{m} / n > 0 y m ≥ 0 \rbrace$ 
 
