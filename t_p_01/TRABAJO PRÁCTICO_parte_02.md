@@ -71,7 +71,6 @@
         F[S] --> I[A];
         F[S] --> J[a];
         I[A] --> K[c];
-     
     ```
 
     Cadena generada $a\space b\space a\space c\space a\space b\space a$
