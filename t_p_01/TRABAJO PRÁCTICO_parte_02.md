@@ -17,15 +17,17 @@
       + Partimos del axioma "$S$" aplicando la regla de producción $S \rightarrow A10$ produciendo $A10$.
       + Aplicamos a ese resultado la regla $A \rightarrow B10$ y obtenemos $B1010$.
       + Luego aplicamos $B \rightarrow C0$ produciendo $C01010$.
-      + Luego aplicamos $C \rightarrow 0$ reconociendo así la cadena solicitada $001010$.
+      + Luego aplicamos $C \rightarrow 0$ reconociendo así la cadena solicitada $001010$​.
+
+    ---
+
+    $P=\lbrace S\rightarrow 0A0,\space A\rightarrow 01B, \space B\rightarrow 0C ,\space C\rightarrow 1\rbrace$
 
 14. Defina los conjuntos $P$ de la gramática de $G = ( \lbrace S, A, B, C\rbrace, \lbrace0, 1\rbrace, S, P )$ que reconozca: 
 
     $0 0 0 1 0 1$​ 
 
     $P = \lbrace S \rightarrow A01, A \rightarrow B1, B \rightarrow C0, C \rightarrow C0 | 0 \rbrace$
-
-    
 
     $S \rightarrow \underline{A}01 \rightarrow \underline{B}101 \rightarrow \underline{C}0101 \rightarrow \underline{C}00101 \rightarrow 000101$
 
@@ -60,7 +62,7 @@
     Ejemplo de árbol generador
 
 ```mermaid
-    graph TD;
+graph TD;
         A[S] --> B[a];
         A[S] --> D[S];
         A[S] --> C[a];
@@ -75,7 +77,36 @@
 
 Cadena generada $a\space b\space a\space c\space a\space b\space a$
 
-16. Defina las reglas de producción para el lenguaje: $L1 = \lbrace a^{n}\space c \space b^{m} / n > 0 y m ≥ 0 \rbrace$ 
+16. Defina las reglas de producción para el lenguaje: $L1 = \lbrace a^{n}\space c \space b^{m} / n > 0 \space \and\space m ≥ 0 \rbrace$ 
+
+    
+
+    | n    | m    |               |
+    | ---- | ---- | ------------- |
+    | 0    | 0    | $a^0cb^0=c$   |
+    | 1    | 0    | $a^1cb^0=ac$  |
+    | 0    | 1    | $a^0cb^1=cb$  |
+    | 1    | 1    | $a^1cb^1=acb$ |
+
+    $S\rightarrow c\space|\space AcB$
+
+    $A\rightarrow \lambda\space|\space a\space |\space aA$
+
+    $B\rightarrow \lambda\space|\space b\space |\space bB$​
+
+    ---
+
+    como *Autómata Infinito*
+
+```mermaid
+    flowchart LR
+    	A((e_0)) -- a --> B((e_1))
+    	B((e_1)) -- a --> B((e_1))
+    	B((e_1)) -- b --> C((e_2))
+    	C((e_2)) -- b --> C((e_2))
+```
+
+$P=\lbrace e_0 \rightarrow ae_1,\space e_1 \rightarrow ae_1\space |\space ce_2,\space e_2\rightarrow be_2\rbrace$
 
 17. Para la especificación dada dibuje el árbol de derivación para: $a \space a \space c \space b \space b$ 
 
@@ -95,9 +126,26 @@ graph TD;
 	I[e_2] --> K[e_2];
 	K[e_2] --> L[λ]
 ```
-18. *Sea la cuádrupla es* $G = (\lbrace S,A,B\rbrace, \lbrace0, 1\rbrace, P, S)$ *con el siguiente conjunto de producciones, indique 3 cadenas válidas diferentes y dibuje los respectivos árboles de derivación:* 
+18. *Sea la cuádrupla es* $G = (\lbrace S,A,B\rbrace, \lbrace0, 1\rbrace, P, S)$​ *con el siguiente conjunto de producciones, indique 3 cadenas válidas diferentes y dibuje los respectivos árboles de derivación:* 
 
-    $P : \lbrace S \rightarrow A1B, A \rightarrow 0A | λ, B \rightarrow 0B | 1B | λ \rbrace$
+    1.
+
+    $P : \lbrace S \rightarrow A1B, A \rightarrow 0A | λ, B \rightarrow 0B | 1B | λ \rbrace$​
+    
+    $\underline{S}\rightarrow \underline{A}1B \rightarrow \lambda1\underline{B}\rightarrow \rightarrow \lambda1\lambda \rightarrow 1$
+
+```mermaid
+	graph TD;
+	A((S)) --> B((A));
+	A((S)) --> C((1));
+	A((S)) --> D((B));
+	B((A)) --> E((λ));
+	D((B)) --> F((λ));
+```
+
+​	2.
+
+​	3.
 
 19. Dibuje el árbol de derivación para la cadena $z = (x + y) * z$ correspondiente a la siguiente gramática: 
 
@@ -105,7 +153,28 @@ graph TD;
 
     $ID \rightarrow {}'{x}'\space |\space {}'{y}' \space |\space {}'{z}'$ 
 
-    $EXPR \rightarrow ID\space {}'{+}'\space EXPR\space |\space EXPR \space {}'{*}' \space ID\space |\space {}'{(}' \space EXPR\space {}'{)}' |\space ID$
+    $EXPR \rightarrow ID\space {}'{+}'\space EXPR\space |\space EXPR \space {}'{*}' \space ID\space |\space {}'{(}' \space EXPR\space {}'{)}' |\space ID$​
+
+```mermaid
+    graph TD
+    	A((ASSIGN)) --> B((ID));
+    	A((ASSIGN)) --> C(('='));
+    	A((ASSIGN)) --> D((EXPR));
+    	B((ID)) --> E(('z'));
+    	D((EXPR)) --> F((EXPR));
+    	D((EXPR)) --> G(('*'));
+    	D((EXPR)) --> H((ID));
+    	F((EXPR)) --> I(("'('"));
+    	F((EXPR)) --> J((EXPR));
+    	F((EXPR)) --> K(("')'"));
+    	J((EXPR)) --> L((ID));
+    	J((EXPR)) --> M(('+'));
+    	J((EXPR)) --> N((EXPR));
+    	L((ID)) --> O(('x'));
+    	N((EXPR)) --> P(('y'));
+    	H((ID)) --> Q(('z'));
+```
+
 
 20. *Verificar si la siguiente gramática, genera cadenas ambiguas, en cuyo caso dar los ejemplos.*
 
