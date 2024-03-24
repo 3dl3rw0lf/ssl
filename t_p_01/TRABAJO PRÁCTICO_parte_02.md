@@ -101,7 +101,7 @@ graph TD;
 
 19. Dibuje el árbol de derivación para la cadena $z = (x + y) * z$ correspondiente a la siguiente gramática: 
 
-    $ASSIGN \rightarrow ID\space  {}'{=}'  EXPR$ 
+    $ASSIGN \rightarrow ID\space  {}'{=}'\space  EXPR$ 
 
     $ID \rightarrow {}'{x}'\space |\space {}'{y}' \space |\space {}'{z}'$ 
 
@@ -111,9 +111,9 @@ graph TD;
 
 20. *Verificar si la siguiente gramática, genera cadenas ambiguas, en cuyo caso dar los ejemplos.*
 
-    $G = (\lbrace ‘a’, ‘+’, ‘*’, ‘(‘, ‘)’\rbrace, \lbrace S\rbrace, S, P)$ 
+    $G = (\lbrace {}'{a}', {}'{+}', {}'{*}', {}'{(}', {}'{)}'\rbrace, \lbrace S\rbrace, S, P)$ 
 
-    $P = \lbrace S := ‘a’, S := S ‘+’ S, S := S * S, S := S\rbrace$
+    $P = \lbrace S := {}'{a}',\space S := S \space {}'{+}'\space S,\space S := S * S,\space S := S\rbrace$
 
 21. Construya una gramática regular no ambigua que genere todas las cadenas de $0$ y $1$ en las cuales los $0$, si aparecen, lo hacen en grupos individuales de a tres. 
 
