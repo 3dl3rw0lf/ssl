@@ -73,7 +73,7 @@
         I[A] --> K[c];
 ```
 
-    Cadena generada $a\space b\space a\space c\space a\space b\space a$
+Cadena generada $a\space b\space a\space c\space a\space b\space a$
 
 16. Defina las reglas de producción para el lenguaje: $L1 = \lbrace a^{n}\space c \space b^{m} / n > 0 y m ≥ 0 \rbrace$ 
 
@@ -101,11 +101,11 @@ graph TD;
 
 19. Dibuje el árbol de derivación para la cadena $z = (x + y) * z$ correspondiente a la siguiente gramática: 
 
-    $ASSIGN \rightarrow ID \prime=\prime EXPR$ 
+    $ASSIGN \rightarrow ID\space  \` = \`  EXPR$ 
 
-    $ID \rightarrow ‘x’ | ‘y’ | ‘z’$ 
+    $ID \rightarrow \‘x\’ | \‘y\’ | \‘z\’$ 
 
-    $EXPR \rightarrow ID ‘+’ EXPR | EXPR ‘*’ ID | ‘(‘ EXPR’)’ | ID *$
+    $EXPR \rightarrow ID \"+\" EXPR | EXPR \"*\" ID | \"(\" EXPR\")\" | ID$
 
 20. *Verificar si la siguiente gramática, genera cadenas ambiguas, en cuyo caso dar los ejemplos.*
 
