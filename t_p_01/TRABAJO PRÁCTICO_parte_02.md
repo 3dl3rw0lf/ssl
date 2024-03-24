@@ -101,11 +101,13 @@ graph TD;
 
 19. Dibuje el árbol de derivación para la cadena $z = (x + y) * z$ correspondiente a la siguiente gramática: 
 
-    $ASSIGN \rightarrow ID\space  \` = \`  EXPR$ 
+    $ASSIGN \rightarrow ID\space  {}'{=}'  EXPR$ 
 
-    $ID \rightarrow \‘x\’ | \‘y\’ | \‘z\’$ 
+    $ID \rightarrow {}'{x}'\space |\space {}'{y}' \space |\space {}'{z}'$ 
 
-    $EXPR \rightarrow ID \"+\" EXPR | EXPR \"*\" ID | \"(\" EXPR\")\" | ID$
+    $EXPR \rightarrow ID\space {}'{+}'\space EXPR\space |\space EXPR \space {}'{*}' \space ID\space |\space {}'{(}' \space EXPR\space {}'{)}' |\space ID$
+
+    
 
 20. *Verificar si la siguiente gramática, genera cadenas ambiguas, en cuyo caso dar los ejemplos.*
 
@@ -117,7 +119,7 @@ graph TD;
 
     Ej. cadenas que pertenecen al lenguaje Ej. cadenas que NO pertenecen al lenguaje $1,11111, 000, 1000, 1110001000$                          $0, 00, 11000011, 000000, 000100$ 
 
-22. *Escriba las reglas de producción para la gramática $G_1$, no ambigua, que reconoce el lenguaje $L_1$*. $G_1 = (\lbrace A\rbrace, \lbrace a, b, c\rbrace, P, S_1)$ $L_1 = \lbrace wcw^{R} / w \in \lbrace a | b\rbrace y R > 0\rbrace$ 
+22. *Escriba las reglas de producción para la gramática* $G_1$, *no ambigua, que reconoce el lenguaje* $L_1$. $G_1 = (\lbrace A\rbrace, \lbrace a, b, c\rbrace, P, S_1)$ $L_1 = \lbrace wcw^{R} / w \in \lbrace a | b\rbrace y R > 0\rbrace$ 
 
 23. Completar las reglas de producción para la gramática. 
 
