@@ -21,7 +21,7 @@
 
     ---
 
-    $P=\lbrace S\rightarrow 0A0,\space A\rightarrow 01B, \space B\rightarrow 0C ,\space C\rightarrow 1\rbrace$
+    $P = \lbrace S\rightarrow 0A0,\space A\rightarrow 01B, \space B\rightarrow 0C ,\space C\rightarrow 1\rbrace$
 
 14. Defina los conjuntos $P$ de la gramática de $G = ( \lbrace S, A, B, C\rbrace, \lbrace0, 1\rbrace, S, P )$ que reconozca: 
 
@@ -230,9 +230,58 @@ graph TD;
 
     ![Diagrama en blanco (2)_](https://github.com/3dl3rw0lf/ssl/blob/main/t_p_01/Diagrama%20en%20blanco%20(2)_.png)
 
+    $Named_constant::="const"<identifier>"="["+"|"-"]$
+
 29. Re-escriba la expresión en notaciones pre y post fija. Dibuje el árbol de *evaluación*.
 
-    $(x1 + x2) – x3 + (x4 / x5 + x6)$
+    $(x_1 + x_2) – x_3 + (x_4 / x_5 + x_6)$
+
+```mermaid
+    graph TD
+    	Re1(("-"))	-->	Su1((+))
+    	Re1(("-"))	-->	X3((x_3))
+    	Su1((+))	-->	X1((x_1))
+    	Su1((+))	-->	X2((x_2))
+    	Su2((+))	--> Re1(("-"))
+    	Su2((+))	-->	Su3((+))
+    	Su3((+))	-->	Di1((/))
+    	Su3((+))	-->	X6((x_6))
+    	Di1((/))	-->	X4((x_4))
+    	Di1((/))	-->	X5((x_5))
+```
+
+​	**Prefija**
+
+​	$+-+x_1x_2x_3+/x_4x_5x_6$
+
+​	**Postfija**
+
+​	$x_1x_2+x_3-x_4x_5/x_6++$
+
+---
+
+​	Realizado por:
+
+​	Para escribir la expresión a modo prefijo si tenemos una expresión simple tipo $x_1 + x_2$, se coloca el símbolo al inicio y luego ambos factores, por ej: $+x_1x_2$: Notar que se deben tener en cuenta paréntesis.
+
+​	**Prefija**: $+-+x_1x_2x_3+/x_4x_5x_6$
+
+​	**Postfija**: $x_1x_2+x_3-x_4x_5/x_6++$
+
+
+```mermaid
+    graph TD
+    	Re1(("-"))	-->	Su1((+))
+    	Re1(("-"))	-->	X3((x3))
+    	Su1((+))	-->	X1((x1))
+    	Su1((+))	-->	X2((x2))
+    	Su2((+))	--> Re1(("-"))
+    	Su2((+))	-->	Su3((+))
+    	Su3((+))	-->	Di1((/))
+    	Su3((+))	-->	X6((x6))
+    	Di1((/))	-->	X4((x4))
+    	Di1((/))	-->	X5((x5))
+```
 
 30. *Re-escriba las expresiones en notaciones pre y post fija. Dibuje el árbol de evaluación.* 
 
@@ -242,7 +291,83 @@ graph TD;
 
     $(b / 2 + b * b – 4 * x – 2 * y) / (2 + a)$
 
+    *Ejercicio* $a + b * c / d$​
     
-
-
-
+    ```mermaid
+    graph TD
+    	Su((+))-->A((a))
+    	Su((+))-->Di((/))
+    	Di((/))-->Mu((*))
+    	Di((/))-->D((d))
+    	Mu((*))-->B((b))
+    	Mu((*))-->C((c))	
+    ```
+    
+    **Prefija**
+    
+    $+a/*bcd$
+    
+    **Postfija**
+    
+    $abc*d/+$
+    
+    *Ejercicio* $a * (b + c / 3) * d – k$​ 
+    
+    ```mermaid
+    graph TD
+    	Mu1((*))-->A((a))
+    	Mu1((*))-->Su((+))
+    	Su((+))-->B((b))
+    	Su((+))-->Di((/))
+    	Di((/))-->C((c))
+    	Di((/))-->Tr((3))
+    	Mu2((*))-->Mu1((*))
+    	Mu2((*))-->D((d))
+    	Re(("-"))-->Mu2((*))
+    	Re(("-"))-->K((k))
+    	
+    ```
+    
+    
+    
+    **Prefija**
+    
+    $-**a+b/c3dk$​
+    
+    **Postfija**
+    
+    $abc3/+*d*k-$​
+    
+    *Ejercicio* $(b / 2 + b * b – 4 * x – 2 * y) / (2 + a)$
+    
+    ```mermaid
+    graph TD
+    	Su1((+))-->Di1((/))
+    	Su1((+))-->Mu1((*))
+    	Mu1((*))-->B2((b))
+    	Mu1((*))-->B3((b))
+    	Di1((/))-->B((b))
+    	Di1((/))-->Do((2))
+    	Re1(("-"))-->Mu2((*))
+    	Re1(("-"))-->Su1((+))
+    	Mu2((*))-->Cu((4))
+    	Mu2((*))-->X((x))
+    	Re2(("-"))-->Re1(("-"))
+    	Re2(("-"))-->Mu3((*))
+    	Mu3((*))-->Do2((2))
+    	Mu3((*))-->Y((y))
+    	Di2((/))-->Re2(("-"))
+    	Di2((/))-->Su2((+))
+    	Su2((+))-->Do3((2))
+    	Su2((+))-->A((a))
+    ```
+    
+    
+    
+    **Prefija**
+    
+    $/--+/b2*bb*4x*2y+2a$​
+    
+    **Postfija**
+    
+    $b2/bb*+4x*-2y*-2a+/$
