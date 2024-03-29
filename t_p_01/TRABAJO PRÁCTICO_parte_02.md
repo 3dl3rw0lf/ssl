@@ -287,22 +287,22 @@ graph TD;
 
     $a + b * c / d$
 
-     $a * (b + c / 3) * d – k$ 
+    $a * (b + c / 3) * d – k$ 
 
     $(b / 2 + b * b – 4 * x – 2 * y) / (2 + a)$
 
     *Ejercicio* $a + b * c / d$​
     
-    ```mermaid
-    graph TD
-    	Su((+))-->A((a))
-    	Su((+))-->Di((/))
-    	Di((/))-->Mu((*))
-    	Di((/))-->D((d))
-    	Mu((*))-->B((b))
-    	Mu((*))-->C((c))	
-    ```
-    
+```mermaid
+	graph TD
+    		Su((+))-->A((a))
+    		Su((+))-->Di((/))
+    		Di((/))-->Mu((*))
+    		Di((/))-->D((d))
+    		Mu((*))-->B((b))
+    		Mu((*))-->C((c))
+```
+
     **Prefija**
     
     $+a/*bcd$
@@ -311,9 +311,9 @@ graph TD;
     
     $abc*d/+$
     
-    *Ejercicio* $a * (b + c / 3) * d – k$​ 
-    
-    ```mermaid
+    *Ejercicio* $a * (b + c / 3) * d – k$​
+
+```mermaid
     graph TD
     	Mu1((*))-->A((a))
     	Mu1((*))-->Su((+))
@@ -325,11 +325,8 @@ graph TD;
     	Mu2((*))-->D((d))
     	Re(("-"))-->Mu2((*))
     	Re(("-"))-->K((k))
-    	
-    ```
-    
-    
-    
+```
+
     **Prefija**
     
     $-**a+b/c3dk$​
@@ -340,7 +337,7 @@ graph TD;
     
     *Ejercicio* $(b / 2 + b * b – 4 * x – 2 * y) / (2 + a)$
     
-    ```mermaid
+```mermaid
     graph TD
     	Su1((+))-->Di1((/))
     	Su1((+))-->Mu1((*))
@@ -360,14 +357,12 @@ graph TD;
     	Di2((/))-->Su2((+))
     	Su2((+))-->Do3((2))
     	Su2((+))-->A((a))
-    ```
-    
-    
-    
-    **Prefija**
+```
+
+    **Prefija**:
     
     $/--+/b2*bb*4x*2y+2a$​
     
-    **Postfija**
+    **Postfija**:
     
     $b2/bb*+4x*-2y*-2a+/$
