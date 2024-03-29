@@ -303,13 +303,9 @@ graph TD;
     		Mu((*))-->C((c))
 ```
 
-​	**Prefija**
+​	**Prefija**: $+a/*bcd$
 
-​	$+a/*bcd$
-
-​	**Postfija**
-
-​	$abc*d/+$
+​	**Postfija**:  $abc*d/+$
 
 ​	*Ejercicio* $a * (b + c / 3) * d – k$
 
@@ -327,13 +323,9 @@ graph TD;
     	Re(("-"))-->K((k))
 ```
 
-​	**Prefija**
+​	**Prefija**: $-**a+b/c3dk$
 
-​	$-**a+b/c3dk$
-
-​	**Postfija**
-
-​	$abc3/+*d*k-$
+​	**Postfija**: $abc3/+*d*k-$
 
 ​	*Ejercicio* $(b / 2 + b * b – 4 * x – 2 * y) / (2 + a)$
 
@@ -359,10 +351,6 @@ graph TD;
     	Su2((+))-->A((a))
 ```
 
-​	**Prefija**:
+​	**Prefija**: $/--+/b2*bb*4x*2y+2a$
 
-​	$/--+/b2*bb*4x*2y+2a$
-
-​	**Postfija**:
-
-​	$b2/bb*+4x*-2y*-2a+/$
+​	**Postfija**: $b2/bb*+4x*-2y*-2a+/$
