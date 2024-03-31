@@ -181,6 +181,8 @@ graph TD;
     $G = (\lbrace {}'{a}', {}'{+}', {}'{*}', {}'{(}', {}'{)}'\rbrace, \lbrace S\rbrace, S, P)$ 
 
     $P = \lbrace S := {}'{a}',\space S := S \space {}'{+}'\space S,\space S := S * S,\space S := S\rbrace$​
+    
+    Cadena ambigua generada: $a+a*a$
 
 ```mermaid
     graph TD
@@ -193,9 +195,8 @@ graph TD;
     	S2((S))	--> A3((a))
     	S3((S))	--> A1((a))
     	S4((S))	-->	A2((a))
-	```
+```
 
-    $a+a*a$
 
 ```mermaid
     graph TD
@@ -208,9 +209,7 @@ graph TD;
     	S2((S))	-->	S4((S))
     	S3((S))	--> A2((a))
     	S4((S))	-->	A3((a))
-	```
-
-    $a+a*a$
+```
 
 21. Construya una gramática regular no ambigua que genere todas las cadenas de $0$ y $1$ en las cuales los $0$, si aparecen, lo hacen en grupos individuales de a tres. 
 
