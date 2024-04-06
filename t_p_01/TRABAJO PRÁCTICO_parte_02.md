@@ -275,7 +275,7 @@ graph TD;
 
     + Los símbolos terminales y no terminales tiene la siguientes equivalencias en relación a la forma de ser representados entre los elementos del diagrama sintáctico y la notación *BNF*
 
-      ![symbols_BNF.png](https://github.com/3dl3rw0lf/ssl/blob/main/t_p_01/symbols_BNF.png)
+      ![symbols_BNF.png](https://github.com/3dl3rw0lf/ssl/blob/main/t_p_01/img/symbols_BNF.png)
 
     + La notación *EBNF* es una extensión de la *BNF*. A la barra "|", que representa una "alternativa" entre símbolos en la notación *BNF*, se agregan los siguientes elementos en *EBNF*.
 
