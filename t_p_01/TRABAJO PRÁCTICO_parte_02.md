@@ -257,11 +257,11 @@ graph TD;
 
     `<ModDeclaration>::= <MODULE> 'ident' ['priority'] ';' {<Import>} <Block>  'ident''.' `
 
-    ![exercise_25](https://github.com/3dl3rw0lf/ssl/blob/main/t_p_01/exercise_25.png)
+    ![exercise_25](https://github.com/3dl3rw0lf/ssl/blob/main/t_p_01/img/exercise_25.png)
 
 26. Exprese el equivalente del siguiente diagrama sintáctico, en notación EBNF: **Declaration**
 
-    ![exercise_26](https://github.com/3dl3rw0lf/ssl/blob/main/t_p_01/exercise_26.png)
+    ![exercise_26](https://github.com/3dl3rw0lf/ssl/blob/main/t_p_01/img/exercise_26.png)
 
     Realizado por: ***Romina Palmieri***
 
@@ -287,17 +287,17 @@ graph TD;
 
     `<list> ::= <alternative> { ‘|’ <alternative> }[ <else>  ] `
 
-    ![exercise_27_diagram](https://github.com/3dl3rw0lf/ssl/blob/main/t_p_01/exercise_27_diagram.png)
+    ![exercise_27_diagram](https://github.com/3dl3rw0lf/ssl/blob/main/t_p_01/img/exercise_27_diagram.png)
 
 28. *Exprese el equivalente del siguiente diagrama sintáctico, en notación EBNF y BNF:*
 
     **Named constant** 
 
-    ![Diagrama en blanco (2)_](https://github.com/3dl3rw0lf/ssl/blob/main/t_p_01/Diagrama%20en%20blanco%20(2)_.png)
+    ![exercise_28](https://github.com/3dl3rw0lf/ssl/blob/main/t_p_01/img/exercise_28.png)
 
     `Named constant::="const"{<Identifier>"="["+"|"-"]<Identifier>}+`
 
-    ![exercise_28_alternative_diagram](https://github.com/3dl3rw0lf/ssl/blob/main/t_p_01/exercise_28_alternative_diagram.png)
+    ![exercise_28_alternative_diagram](https://github.com/3dl3rw0lf/ssl/blob/main/t_p_01/img/exercise_28_alternative_diagram.png)
 
 29. Re-escriba la expresión en notaciones pre y post fija. Dibuje el árbol de *evaluación*.
 
