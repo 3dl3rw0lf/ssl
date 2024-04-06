@@ -4,7 +4,9 @@
 
 13. Defina los conjuntos $P$ de la gramática de $G =  (\lbrace S, A, B, C\rbrace, \lbrace0, 1\rbrace, S, P )$ que reconozca: 
 
-    $0 0 1 0 1 0$​ 
+    $0 0 1 0 1 0$​​ 
+
+    Realizado por: **Mauricio Fariello**
 
     **Respuesta**:
 
@@ -35,7 +37,9 @@
 
     $L1 = \lbrace w^n cw^n / w \in \lbrace a, b\rbrace n > 0\rbrace$
 
-    $G1 = (\lbrace A, S\rbrace, \lbrace a, b, c\rbrace, P, S)$​ 
+    $G1 = (\lbrace A, S\rbrace, \lbrace a, b, c\rbrace, P, S)$​​ 
+
+    Realizado por: **Oscar León**
 
     a. Al definir una gramática, lo primero es analizar "la forma" de la cadena que se debe generar. En este caso, a izquierda y derecha de $c$ debe aparecer la misma subcadena, con la misma cantidad de símbolos $n>0$.
 
@@ -58,7 +62,7 @@
     $S \rightarrow a\space A \space a\space |\space b\space A\space b$
 
     $A \rightarrow c$
-
+    
     Ejemplo de árbol generador
 
 ```mermaid
@@ -108,8 +112,10 @@ Cadena generada $a\space b\space a\space c\space a\space b\space a$
 
 $P=\lbrace e_0 \rightarrow ae_1,\space e_1 \rightarrow ae_1\space |\space ce_2,\space e_2\rightarrow be_2\rbrace$
 
-17. Para la especificación dada dibuje el árbol de derivación para: $a \space a \space c \space b \space b$ 
+17. Para la especificación dada dibuje el árbol de derivación para: $a \space a \space c \space b \space b$​ 
 
+    Realizado por: **Romina Palmieri**
+    
     $P = \lbrace e0 \rightarrow  a e1, e1 \rightarrow  a e1 | c e2, e2 \rightarrow b e2 | \lambda \rbrace$
 
 ```mermaid
@@ -213,11 +219,17 @@ graph TD;
 
 21. Construya una gramática regular no ambigua que genere todas las cadenas de $0$ y $1$ en las cuales los $0$, si aparecen, lo hacen en grupos individuales de a tres. 
 
-    Ej. cadenas que pertenecen al lenguaje Ej. cadenas que NO pertenecen al lenguaje $1,11111, 000, 1000, 1110001000$                          $0, 00, 11000011, 000000, 000100$ 
+    Ej. cadenas que pertenecen al lenguaje Ej. cadenas que NO pertenecen al lenguaje $1,11111, 000, 1000, 1110001000$                          $0, 00, 11000011, 000000, 000100$​ 
 
-22. *Escriba las reglas de producción para la gramática* $G_1$, *no ambigua, que reconoce el lenguaje* $L_1$. $G_1 = (\lbrace A\rbrace, \lbrace a, b, c\rbrace, P, S_1)$ $L_1 = \lbrace wcw^{R} / w \in \lbrace a | b\rbrace y R > 0\rbrace$ 
+    Realizado por: **Marcela Vargas**
+
+22. *Escriba las reglas de producción para la gramática* $G_1$, *no ambigua, que reconoce el lenguaje* $L_1$. $G_1 = (\lbrace A\rbrace, \lbrace a, b, c\rbrace, P, S_1)$ $L_1 = \lbrace wcw^{R} / w \in \lbrace a | b\rbrace y R > 0\rbrace$​ 
+
+    
 
 23. Completar las reglas de producción para la gramática. 
+
+    Realizado por: **Julio Monetti**
 
     Sea $G = (\lbrace A, B\rbrace, \lbrace a\rbrace, P, S)$ una gramática regular lineal a derecha que genera $L = \lbrace a^{2n} / n ≥ 0\rbrace$
 
@@ -229,7 +241,7 @@ graph TD;
 
 24. *Completar las reglas de producción para la gramática.* 
 
-    Sea $G = ({A, B, C}, {0, 1, 2, 3}, P, S)$ *que genera*: $L = {0i 1i+k 2k 3n+1 / i, k, n ≥ 0 }$ 
+    Sea $G = ({A, B, C}, {0, 1, 2, 3}, P, S)$ *que genera*: $L = {0^i 1^{i+k} 2^k 3^{n+1} / i, k, n ≥ 0 }$ 
 
     $S\rightarrow ABC$                                                                 $S\rightarrow ?$ 
 
@@ -245,13 +257,37 @@ graph TD;
 
     `<ModDeclaration>::= <MODULE> 'ident' ['priority'] ';' {<Import>} <Block>  'ident''.' `
 
+    ![exercise_25](https://github.com/3dl3rw0lf/ssl/blob/main/t_p_01/exercise_25.png)
+
 26. Exprese el equivalente del siguiente diagrama sintáctico, en notación EBNF: **Declaration**
 
-    ![Diagrama en blanco](https://github.com/3dl3rw0lf/ssl/blob/main/t_p_01/Diagrama%20en%20blanco.png) 
+    ![exercise_26](https://github.com/3dl3rw0lf/ssl/blob/main/t_p_01/exercise_26.png)
+
+    Realizado por: ***Romina Palmieri***
+
+    **Respuesta**
+
+    `<Declaration>::='('[['VAR']<FormalType>{','['VAR']<FormalType>]')'[':'<Qualildent>]`
+
+    **Explicación**:
+
+    + Buscamos representar la misma gramática del diagrama sintáctico del enunciado pero con la notación *EBNF*.
+
+    + Los símbolos terminales y no terminales tiene la siguientes equivalencias en relación a la forma de ser representados entre los elementos del diagrama sintáctico y la notación *BNF*
+
+      ![symbols_BNF.png](https://github.com/3dl3rw0lf/ssl/blob/main/t_p_01/symbols_BNF.png)
+
+    + La notación *EBNF* es una extensión de la *BNF*. A la barra "|", que representa una "alternativa" entre símbolos en la notación *BNF*, se agregan los siguientes elementos en *EBNF*.
+
+      + llaves { } para representar las repeticiones del diagrama indicadas por las flechas,
+      + corchetes [ ] para representar opcionalidad,
+      + y paréntesis ( ) para indicar agrupaciones.
 
 27. *Dibuje el diagrama sintáctico equivalente*:
 
     `<list> ::= <alternative> { ‘|’ <alternative> }[ <else>  ] `
+
+    ![exercise_27_diagram](https://github.com/3dl3rw0lf/ssl/blob/main/t_p_01/exercise_27_diagram.png)
 
 28. *Exprese el equivalente del siguiente diagrama sintáctico, en notación EBNF y BNF:*
 
@@ -259,9 +295,13 @@ graph TD;
 
     ![Diagrama en blanco (2)_](https://github.com/3dl3rw0lf/ssl/blob/main/t_p_01/Diagrama%20en%20blanco%20(2)_.png)
 
-    $Named_constant::="const"<identifier>"="["+"|"-"]$
+    `Named constant::="const"{<Identifier>"="["+"|"-"]<Identifier>}+`
+
+    ![exercise_28_alternative_diagram](https://github.com/3dl3rw0lf/ssl/blob/main/t_p_01/exercise_28_alternative_diagram.png)
 
 29. Re-escriba la expresión en notaciones pre y post fija. Dibuje el árbol de *evaluación*.
+
+    Realizado por: **Gustavo Arauz**
 
     $(x_1 + x_2) – x_3 + (x_4 / x_5 + x_6)$
 
@@ -279,17 +319,13 @@ graph TD;
     	Di1((/))	-->	X5((x_5))
 ```
 
-​	**Prefija**
+​	**Prefija**: $+-+x_1x_2x_3+/x_4x_5x_6$
 
-​	$+-+x_1x_2x_3+/x_4x_5x_6$
-
-​	**Postfija**
-
-​	$x_1x_2+x_3-x_4x_5/x_6++$
+​	**Postfija**:  $x_1x_2+x_3-x_4x_5/x_6++$
 
 ---
 
-​	Realizado por:
+​	Realizado por: **Romina Palmieri**
 
 ​	Para escribir la expresión a modo prefijo si tenemos una expresión simple tipo $x_1 + x_2$, se coloca el símbolo al inicio y luego ambos factores, por ej: $+x_1x_2$: Notar que se deben tener en cuenta paréntesis.
 
