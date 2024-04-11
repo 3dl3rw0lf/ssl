@@ -2,7 +2,7 @@
 
 31. Para el siguiente autómata determine la expresión normal (regular) y su equivalente en notación BNF:
 
-    <img src="D:\UTN\ssl\06.automatas\05.TP_aef_ap\img\exercise_31.png" style="zoom:33%;" />
+    <img src="https://github.com/3dl3rw0lf/ssl/blob/main/t_p/img/exercise_31.png" style="zoom:33%;" />
 
 32. Para la siguiente expresión: $A.((A|B).C)^{*}.C$ construya el *AEFD*. Realice la descripción en forma gráfica, funcional y tabular.
 
@@ -28,27 +28,27 @@
 
 37.  Obtenga el *AFD* equivalente para el *AFND*, dibuje el autómata *AFD* indicando a cuáles nodos del *AFND* representa cada nodo. Describa la tabla completa de transiciones $P(Q)$.
 
-     <img src="D:\UTN\ssl\06.automatas\05.TP_aef_ap\img\exercise_37.png" alt="exercise_37" style="zoom:33%;" />
+     <img src="https://github.com/3dl3rw0lf/ssl/blob/main/t_p/img/exercise_37.png" alt="exercise_37" style="zoom:33%;" />
 
 38. Obtenga el *AFD* equivalente para el *AFND*, dibuje el autómata *AFD* indicando a cuáles nodos del *AFND* original representa cada nodo.
 
-    <img src="D:\UTN\ssl\06.automatas\05.TP_aef_ap\img\exercise_38.png" style="zoom:33%;" />
+    <img src="https://github.com/3dl3rw0lf/ssl/blob/main/t_p/img/exercise_38.png" style="zoom:33%;" />
 
 39. Obtenga el autómata equivalente mínimo para:
 
-    <img src="D:\UTN\ssl\06.automatas\05.TP_aef_ap\img\exercise_39.png" alt="exercise_39" style="zoom:33%;" />
+    <img src="https://github.com/3dl3rw0lf/ssl/blob/main/t_p/img/exercise_39.png" alt="exercise_39" style="zoom:33%;" />
 
 40. Obtenga el autómata equivalente mínimo. Indicar la secuencia de conjuntos obtenidos y dibujar el autómata resultante.
 
-    <img src="D:\UTN\ssl\06.automatas\05.TP_aef_ap\img\exercise_40.png" style="zoom:33%;" />
+    <img src="https://github.com/3dl3rw0lf/ssl/blob/main/t_p/img/exercise_40.png" style="zoom:33%;" />
 
 41. Para el siguiente *AFND*, encuentre el *AFD* equivalente, dibuje el autómata *AFD* indicando a cuáles nodos del *AFND* original representa cada nodo.
 
-    <img src="D:\UTN\ssl\06.automatas\05.TP_aef_ap\img\exercise_41.png" style="zoom:33%;" />
+    <img src="https://github.com/3dl3rw0lf/ssl/blob/main/t_p/img/exercise_41.png" style="zoom:33%;" />
 
 42.  Obtenga el autómata equivalente mínimo. Indicar la secuencia de conjuntos partición obtenidos y dibujar el autómata resultante.
 
-     <img src="D:\UTN\ssl\06.automatas\05.TP_aef_ap\img\exercise_42.png" alt="exercise_42" style="zoom:33%;" />
+     <img src="https://github.com/3dl3rw0lf/ssl/blob/main/t_p/img/exercise_42.png" alt="exercise_42" style="zoom:33%;" />
 
      ## Convención a usar con los AP: los símbolos en la pila se insertan en sentido $\rightarrow$
 

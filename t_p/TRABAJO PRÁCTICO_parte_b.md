@@ -257,11 +257,11 @@ graph TD;
 
     `<ModDeclaration>::= <MODULE> 'ident' ['priority'] ';' {<Import>} <Block>  'ident''.' `
 
-    ![exercise_25](https://github.com/3dl3rw0lf/ssl/blob/main/t_p_01/img/exercise_25.png)
+    ![exercise_25](https://github.com/3dl3rw0lf/ssl/blob/main/t_p/img/exercise_25.png)
 
 26. Exprese el equivalente del siguiente diagrama sintáctico, en notación EBNF: **Declaration**
 
-    ![exercise_26](https://github.com/3dl3rw0lf/ssl/blob/main/t_p_01/img/exercise_26.png)
+    ![exercise_26](https://github.com/3dl3rw0lf/ssl/blob/main/t_p/img/exercise_26.png)
 
     Realizado por: ***Romina Palmieri***
 
@@ -275,7 +275,7 @@ graph TD;
 
     + Los símbolos terminales y no terminales tiene la siguientes equivalencias en relación a la forma de ser representados entre los elementos del diagrama sintáctico y la notación *BNF*
 
-      ![symbols_BNF.png](https://github.com/3dl3rw0lf/ssl/blob/main/t_p_01/img/symbols_BNF.png)
+      ![symbols_BNF.png](https://github.com/3dl3rw0lf/ssl/blob/main/t_p/img/symbols_BNF.png)
 
     + La notación *EBNF* es una extensión de la *BNF*. A la barra "|", que representa una "alternativa" entre símbolos en la notación *BNF*, se agregan los siguientes elementos en *EBNF*.
 
@@ -287,13 +287,13 @@ graph TD;
 
     `<list> ::= <alternative> { ‘|’ <alternative> }[ <else>  ] `
 
-    ![exercise_27_diagram](https://github.com/3dl3rw0lf/ssl/blob/main/t_p_01/img/exercise_27_diagram.png)
+    ![exercise_27_diagram](https://github.com/3dl3rw0lf/ssl/blob/main/t_p/img/exercise_27_diagram.png)
 
 28. *Exprese el equivalente del siguiente diagrama sintáctico, en notación EBNF y BNF:*
 
     **Named constant** 
 
-    ![exercise_28](https://github.com/3dl3rw0lf/ssl/blob/main/t_p_01/img/exercise_28.png)
+    ![exercise_28](https://github.com/3dl3rw0lf/ssl/blob/main/t_p/img/exercise_28.png)
 
     ***BNF***:
 
@@ -323,7 +323,7 @@ graph TD;
 
     `Named constant::="const"{<Identifier>"="["+"|"-"]<Identifier>}+`
 
-    ![exercise_28_alternative_diagram](https://github.com/3dl3rw0lf/ssl/blob/main/t_p_01/img/exercise_28_alternative_diagram.png)
+    ![exercise_28_alternative_diagram](https://github.com/3dl3rw0lf/ssl/blob/main/t_p/img/exercise_28_alternative_diagram.png)
 
 29. Re-escriba la expresión en notaciones pre y post fija. Dibuje el árbol de *evaluación*.
 
