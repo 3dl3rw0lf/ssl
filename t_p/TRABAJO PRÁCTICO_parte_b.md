@@ -295,6 +295,32 @@ graph TD;
 
     ![exercise_28](https://github.com/3dl3rw0lf/ssl/blob/main/t_p_01/img/exercise_28.png)
 
+    ***BNF***:
+
+    La expresión en EBNF que proporcionaste es:
+
+    ```ebnf
+    Named constant ::= "const" {<Identifier> "=" ["+" | "-"] <Identifier>}+
+    ```
+
+    Para convertir esta expresión a BNF (Backus-Naur Form), necesitamos eliminar las notaciones de repetición `{}` y opción `[]` que son características de EBNF (Extended Backus-Naur Form). Aquí está la conversión:
+
+    ```bnf
+    <Named constant> ::= "const" <Identifier List>
+    <Identifier List> ::= <Identifier> "=" <Sign> <Identifier> | <Identifier> "=" <Sign> <Identifier> <Identifier List>
+    <Sign> ::= "+" | "-" | <empty>
+    ```
+
+    En esta versión BNF, `<Named constant>` se define como `"const"` seguido de una lista de identificadores `<Identifier List>`. `<Identifier List>` puede ser un solo identificador o una secuencia de identificadores. `<Sign>` puede ser `"+"`, `"-"` o vacío (representado por `<empty>`), lo que indica que el signo es opcional.
+
+    Espero que esto te ayude. Si tienes más preguntas, no dudes en preguntar. 😊
+
+    ​              
+
+    `Named constant::="const"`
+
+    ***EBNF***:
+
     `Named constant::="const"{<Identifier>"="["+"|"-"]<Identifier>}+`
 
     ![exercise_28_alternative_diagram](https://github.com/3dl3rw0lf/ssl/blob/main/t_p_01/img/exercise_28_alternative_diagram.png)
