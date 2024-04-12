@@ -14,7 +14,7 @@
 
 36. Dada la siguiente especificación, dibuje el autómata:
 
-    $L_1=\lbrace a^{n}cb^{m}/n \gt0\space \and\space \geq0\rbrace$ 
+    $L_1=\lbrace a^{n}cb^{m}/n \gt0\space \and \space \geq0\rbrace$ 
 
     $M=\lbrace Q, \Sigma, f, e_0, F\rbrace$
 
@@ -74,9 +74,9 @@
 
      $A=\lbrace \Sigma_e, \Gamma, Q, a_0,q_0,F,f,g\rbrace$
 
-     $\lbrace x \rbrace:\text{alfabeto de entrada}\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\lbrace x,\#\rbrace : \text{alfabeto de la pila}$
+     $\lbrace x \rbrace:\text{alfabeto de entrada}\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\lbrace x,\# \rbrace : \text{alfabeto de la pila}$
 
-     $\lbrace q_0,q_1,q_2\rbrace:\text{conjunto de estados}\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space \# : \text{símbolo inicial de la pila}$
+     $\lbrace q_0,q_1,q_2\rbrace:\text{conjunto de estados}\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space \#  : \text{símbolo inicial de la pila}$
 
      $\lbrace q_0\rbrace:\text{estado inicial}\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\lbrace q_2\rbrace : \text{estado final}$
 
