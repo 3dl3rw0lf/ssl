@@ -14,7 +14,7 @@
 
 36. Dada la siguiente especificación, dibuje el autómata:
 
-    $L_1=\lbrace a^{n}cb^{m}/n \gt0\space \and \space m \geq 0\rbrace$ 
+    $L_1=\lbrace a^{n}cb^{m}/n \gt0\space \wedge \space m \geq 0\rbrace$ 
 
     $M=\lbrace Q, \Sigma, f, e_0, F\rbrace$
 
