@@ -81,7 +81,7 @@ graph TD;
 
 Cadena generada $a\space b\space a\space c\space a\space b\space a$
 
-16. Defina las reglas de producción para el lenguaje: $L1 = \lbrace a^{n}\space c \space b^{m} / n > 0 \space \and\space m ≥ 0 \rbrace$ 
+16. Defina las reglas de producción para el lenguaje: $L1 = \lbrace a^{n}\space c \space b^{m} / n > 0 \space \wedge \space m ≥ 0 \rbrace$ 
 
     
 
