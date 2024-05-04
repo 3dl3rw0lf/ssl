@@ -143,9 +143,9 @@ $P=\lbrace e_0 \rightarrow ae_1,\space e_1 \rightarrow ae_1\space |\space ce_2,\
     
     $P = \lbrace e_0 \rightarrow  a e_1, e_1 \rightarrow  a e_1 | c e_2, e_2 \rightarrow b e_2 \rbrace$​
     
-    ```mermaid
-    graph TD;
-    	A((e_0)) --> B((a));
+```mermaid
+graph TD;
+	A((e_0)) --> B((a));
     	A((e_0)) --> C((e_1));
     	C((e_1)) --> D((a));
     	C((e_1)) --> E((e_1));
@@ -155,11 +155,12 @@ $P=\lbrace e_0 \rightarrow ae_1,\space e_1 \rightarrow ae_1\space |\space ce_2,\
     	G((e_2)) --> I((e_2));
     	I((e_2)) --> J((b));
     	I((e_2)) --> K((e_2));
-    ```
+```
+
+   Realizado por: **Gustavo Arauz**
     
-    Realizado por: **Gustavo Arauz**
-    
-    $P = \lbrace e_0 \rightarrow  a e_1, e_1 \rightarrow  a e_1 | c e_2, e_2 \rightarrow b e_2 | \lambda \rbrace$
+   $P = \lbrace e_0 \rightarrow  a e_1, e_1 \rightarrow  a e_1 | c e_2, e_2 \rightarrow b e_2 | \lambda \rbrace$
+
 
 ```mermaid
 graph TD;
