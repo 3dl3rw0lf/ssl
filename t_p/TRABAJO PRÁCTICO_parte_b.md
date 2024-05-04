@@ -23,15 +23,36 @@
 
     ---
 
-    $P = \lbrace S\rightarrow 0A0,\space A\rightarrow 01B, \space B\rightarrow 0C ,\space C\rightarrow 1\rbrace$
+    Realizado por: **Gustavo Arauz**
+
+    $P = \lbrace S\rightarrow 0A0,\space A\rightarrow 01B, \space B\rightarrow 0C ,\space C\rightarrow 1\rbrace$​​
+
+    *Explicación*:
+
+    + Se debe crear el conjunto $P$ formado por las producciones que generen la secuencia de caracteres $001010$.
+    + Las reglas de derivación aplicadas son:
+      + Partimos del axioma "$S$" aplicando la regla de producción $S\rightarrow 0A0$ produciendo $0A0$
+      + Aplicando a ese resultado la regla $A\rightarrow 01B$ produciendo $001B0$
+      + Luego aplicamos $B\rightarrow 0C$ produciendo $0010C0$
+      + Luego aplicamos $C\rightarrow 1$ reconociendo así la cadena solicitada $001010$.
 
 14. Defina los conjuntos $P$ de la gramática de $G = ( \lbrace S, A, B, C\rbrace, \lbrace0, 1\rbrace, S, P )$ que reconozca: 
 
     $0 0 0 1 0 1$​ 
 
-    $P = \lbrace S \rightarrow A01, A \rightarrow B1, B \rightarrow C0, C \rightarrow C0 | 0 \rbrace$
+    $P = \lbrace S \rightarrow A01, A \rightarrow B1, B \rightarrow C0, C \rightarrow C0 | 0 \rbrace$​
 
     $S \rightarrow \underline{A}01 \rightarrow \underline{B}101 \rightarrow \underline{C}0101 \rightarrow \underline{C}00101 \rightarrow 000101$
+
+    *Explicación*:
+
+    + Se debe crear el conjunto $P$ formado por las producciones que generen la secuencia de caracteres $000101$.
+    + Las reglas de derivación aplicadas son:
+      + Partimos del axioma "$S$" aplicando la regla de producción $S\rightarrow A01$ produciendo $A01$
+      + Aplicando a ese resultado la regla $A\rightarrow B1$ produciendo $B101$
+      + Luego aplicamos $B\rightarrow C0$ produciendo $C0101$
+      + Luego aplicamos $C\rightarrow C0$ produciendo $C00101$.
+      + Aplicamos $C\rightarrow 0$ reconociendo así la cadena solicitada $000101$
 
 15. Definir las reglas de una gramática *Tipo 2* en base a la especificación dada, que reconozca el lenguaje: 
 
@@ -67,23 +88,23 @@
 
 ```mermaid
 graph TD;
-        A[S] --> B[a];
-        A[S] --> D[S];
-        A[S] --> C[a];
-        D[S] --> E[b];
-        D[S] --> F[S];
-        D[S] --> G[b];
-        F[S] --> H[a];
-        F[S] --> I[A];
-        F[S] --> J[a];
-        I[A] --> K[c];
+        A((S)) --> B((a));
+        A((S)) --> D((S));
+        A((S)) --> C((a));
+        D((S)) --> E((b));
+        D((S)) --> F((S));
+        D((S)) --> G((b));
+        F((S)) --> H((a));
+        F((S)) --> I((A));
+        F((S)) --> J((a));
+        I((A)) --> K((c));
 ```
 
 Cadena generada $a\space b\space a\space c\space a\space b\space a$
 
 16. Defina las reglas de producción para el lenguaje: $L1 = \lbrace a^{n}\space c \space b^{m} / n > 0 \space \wedge \space m ≥ 0 \rbrace$ 
 
-    
+    Ejemplo de cadenas generadas por el lenguaje:
 
     | n    | m    |               |
     | ---- | ---- | ------------- |
@@ -92,6 +113,8 @@ Cadena generada $a\space b\space a\space c\space a\space b\space a$
     | 0    | 1    | $a^0cb^1=cb$  |
     | 1    | 1    | $a^1cb^1=acb$ |
 
+    Reglas de prdocción:
+
     $S\rightarrow c\space|\space AcB$
 
     $A\rightarrow \lambda\space|\space a\space |\space aA$
@@ -99,7 +122,9 @@ Cadena generada $a\space b\space a\space c\space a\space b\space a$
     $B\rightarrow \lambda\space|\space b\space |\space bB$​
 
     ---
-
+    
+    Realizado en clase:
+    
     como *Autómata Infinito*
 
 ```mermaid
@@ -116,29 +141,47 @@ $P=\lbrace e_0 \rightarrow ae_1,\space e_1 \rightarrow ae_1\space |\space ce_2,\
 
     Realizado por: **Romina Palmieri**
     
-    $P = \lbrace e0 \rightarrow  a e1, e1 \rightarrow  a e1 | c e2, e2 \rightarrow b e2 | \lambda \rbrace$
+    $P = \lbrace e_0 \rightarrow  a e_1, e_1 \rightarrow  a e_1 | c e_2, e_2 \rightarrow b e_2 \rbrace$
+    
+    ```mermaid
+    graph TD;
+    	A((e_0)) --> B((a));
+    	A((e_0)) --> C((e_1));
+    	C((e_1)) --> D((a));
+    	C((e_1)) --> E((e_1));
+    	E((e_1)) --> F((c));
+    	E((e_1)) --> G((e_2));
+    	G((e_2)) --> H((b));
+    	G((e_2)) --> I((e_2));
+    	I((e_2)) --> J((b));
+    	I((e_2)) --> K((e_2));
+    ```
+    
+    Realizado por: **Gustavo Arauz**
+    
+    $P = \lbrace e_0 \rightarrow  a e_1, e_1 \rightarrow  a e_1 | c e_2, e_2 \rightarrow b e_2 | \lambda \rbrace$
 
 ```mermaid
 graph TD;
-	A[e_0] --> B[a];
-	A[e_0] --> C[e_1];
-	C[e_1] --> D[a];
-	C[e_1] --> E[e_1];
-	E[e_1] --> F[c];
-	E[e_1] --> G[e_2];
-	G[e_2] --> H[b];
-	G[e_2] --> I[e_2];
-	I[e_2] --> J[b];
-	I[e_2] --> K[e_2];
-	K[e_2] --> L[λ]
+	A((e_0)) --> B((a));
+	A((e_0)) --> C((e_1));
+	C((e_1)) --> D((a));
+	C((e_1)) --> E((e_1));
+	E((e_1)) --> F((c));
+	E((e_1)) --> G((e_2));
+	G((e_2)) --> H((b));
+	G((e_2)) --> I((e_2));
+	I((e_2)) --> J((b));
+	I((e_2)) --> K((e_2));
+	K((e_2)) --> L((λ))
 ```
 18. *Sea la cuádrupla es* $G = (\lbrace S,A,B\rbrace, \lbrace0, 1\rbrace, P, S)$​ *con el siguiente conjunto de producciones, indique 3 cadenas válidas diferentes y dibuje los respectivos árboles de derivación:* 
 
-    1.
+    $P : \lbrace S \rightarrow A1B, A \rightarrow 0A | λ, B \rightarrow 0B | 1B | λ \rbrace$
 
-    $P : \lbrace S \rightarrow A1B, A \rightarrow 0A | λ, B \rightarrow 0B | 1B | λ \rbrace$​
+    1.
     
-    $\underline{S}\rightarrow \underline{A}1B \rightarrow \lambda1\underline{B}\rightarrow \rightarrow \lambda1\lambda \rightarrow 1$
+    $\underline{S}\rightarrow \underline{A}1B \rightarrow \lambda1\underline{B} \rightarrow \lambda1\lambda \rightarrow 1$
 
 ```mermaid
 	graph TD;
@@ -151,7 +194,41 @@ graph TD;
 
 ​	2.
 
-​	3.
+​	$\underline{S}\rightarrow \underline{A}1B \rightarrow 0\underline{A}1B \rightarrow 0\lambda1\underline{B} \rightarrow 0\lambda10\underline{B} \rightarrow 0\lambda10\lambda \rightarrow 010$
+
+```mermaid
+graph TD;
+	S((S))-->A((A));
+	S((S))-->ONE((1));
+	S((S))-->B((B));
+	A((A))-->Zero((0));
+	A((A))-->A1((A));
+	A1((A))-->Lambda((λ));
+	B((B))-->Zero1((0));
+	B((B))-->B1((B));
+	B1((B))-->Lambda1((λ));
+```
+
+​	3.	
+
+​	$S\rightarrow \underline{A}1B \rightarrow 0\underline{A}1B \rightarrow 00\underline{A}1B \rightarrow 00\lambda1\underline{B} \rightarrow 00\lambda10\underline{B} \rightarrow 00\lambda101\underline{B} \rightarrow 00\lambda101\lambda \rightarrow 00101$​
+
+```mermaid
+graph TD
+	S((S))-->A((A))
+	S((S))-->ONE((1))
+	S((S))-->B((B))
+	A((A))-->ZERO((0))
+	A((A))-->A1((A))
+	A1((A))-->ZERO2((0));
+	A1((A))-->A2((A));
+	A2((A))-->LAMBDA((λ));
+	B((B))-->ZERO1((0))
+	B((B))-->B1((B))
+	B1((B))-->ONE1((1))
+	B1((B))-->B2((B))
+	B2((B))-->LAMBDA1((λ))
+```
 
 19. Dibuje el árbol de derivación para la cadena $z = (x + y) * z$ correspondiente a la siguiente gramática: 
 
@@ -223,13 +300,136 @@ graph TD;
 
     Realizado por: **Marcela Vargas**
 
-22. *Escriba las reglas de producción para la gramática* $G_1$, *no ambigua, que reconoce el lenguaje* $L_1$. $G_1 = (\lbrace A\rbrace, \lbrace a, b, c\rbrace, P, S_1)$ $L_1 = \lbrace wcw^{R} / w \in \lbrace a | b\rbrace y R > 0\rbrace$​ 
+    Para realizar **<u>gramática regular</u>** debemos recordar de la teoría que es una *REGULAR*: son las llamadas gramáticas de tipo 3 o Regulares, deben ser lineales a Derecha o a Izquierda.
 
+    - **Lineales por Izquierda**
+
+      $P = \lbrace (S::=λ) o (A::=Ba) o (A::=a)/ A,B, \in \Sigma_N, a \in \Sigma_T\rbrace$
+
+    - **Lineales por Derecha**
+
+      $P=\lbrace (S::=λ) o (A::=aB) o (A::=a)/A,B\in \Sigma_N, a\in \Sigma_T \rbrace$
+
+    Es decir, que las producciones de nuestras gramática
+
+    También pide en el ejercicio que la gramática *<u>no sea ambigua</u>*
+
+    *Gramática ambigua*: Una gramática es ambigua si tiene al menos una sentencia ambigua. Una sentencia es ambigua si tiene más de una derivación o árbol de derivación.
+
+    En nuestro caso, la gramática resultante debe ser *NO AMBIGUA*, es decir, para llegar a una palabra aceptada, esta *NO DEBE* tener más de un árbol de derivación.
+
+    Con esta base teórica sería incorrecto colocar una producción del tipo $S \rightarrow 000A$.
+
+    Sino lo que debemos hacer es una producción que al ingresar un 0, "redirigir" a colocar un 0 más y este a su vez un 0 más. Luego, asegurarnos con otra producción que luego de los 3 ceros deberá aceptar si o si un 1.
+
+    Entonces, va quedando:
+
+    $S \rightarrow 0A$
+
+    $A \rightarrow 0B$
+
+    $B \rightarrow 0C \space | \space 0$  acá la producción de un solo 0 para poder generar la palabra 000
+
+    $C \rightarrow 1S$
+
+    Pero esto está incompleto nos falta las producciones que generen muchos 1, y que permitan ingresar los número 1 en las palabra de nuestra gramática.
+
+    $S \rightarrow 1S \space | \space \lambda$
+
+    ***RESULTADO FINAL***
+
+    $S \rightarrow 1S \space | \space 0A \space | \space \lambda$
+
+    $A \rightarrow 0B$
+
+    $B \rightarrow 0C \space | \space 0$
+
+    $C \ rightarrow 1S$
+
+    ---
+
+    ***Bibliografía***: 
+
+    - Diapositivas de la materia Lenguajes Formales, tipos de Gramática, Ambigüedad.
+    - Libro Lenguajes Gramáticas y Autómatas de Isasi, Martinez y Borrajo - Capítulo 2 Lenguajes y Gramáticas Formales, pág. 18 a 20
+
+22. *Escriba las reglas de producción para la gramática* $G_1$, *no ambigua, que reconoce el lenguaje* $L_1$. $G_1 = (\lbrace A\rbrace, \lbrace a, b, c\rbrace, P, S_1)$ $L_1 = \lbrace wcw^{R} / w \in \lbrace a | b\rbrace \and R > 0\rbrace$ 
+
+    Palabras que se pueden formar con el lenguaje $L_1$ 
+
+    $aca$
+
+    $bcb$
+
+    $aacaa$
+
+    $abcba$
+
+    $abbcbba$
+
+    ```mermaid
+    graph TD;
+    	S((S))-->a((a));
+    	S((S))-->c((c));
+    	S((S))-->a1((a));
+    	
+    	S1((S))-->b((b));
+    	S1((S))-->c1((c));
+    	S1((S))-->b1((b));
     
+    ```
+
+    ```mermaid
+    graph TD;
+    	S2((S))-->a2((a));
+    	S2((S))-->A((A));
+    	S2((S))-->a3((a));
+    	A((A))-->a4((a));
+    	A((A))-->c2((c));
+    	A((A))-->a5((a));
+    	
+    	S3((S))-->a6((a));
+    	S3((S))-->A1((A));
+    	S3((S))-->a7((a));
+    	A1((A))-->b2((b));
+    	A1((A))-->c3((c));
+    	A1((A))-->b3((b));
+    ```
+
+    ```mermaid
+    graph TD;
+    	S((S))-->a((a));
+    	S((S))-->A((A));
+    	S((S))-->a1((a));
+    	A((A))-->b((b));
+    	A((A))-->A1((A));
+    	A((A))-->b1((b));
+    	A1((A))-->b2((b));
+    	A1((A))-->c((c));
+    	A1((A))-->b3((b));
+    ```
+
+    Por lo tanto, el axioma $S_1$ debe ser:
+
+    $S_1 \rightarrow aSa \space | \space bSb \space | \space A$
+
+    y el símbolo no terminal debe generar:
+
+    $A \rightarrow c$
+
+    Otras opciones válidas son:
+
+    $S_1 \rightarrow aAa \space | \space bAb$
+
+    $A \rightarrow aAa \space | \space bAb \space | \space c$
+
+    o:
+
+    $S_1 \rightarrow aAa \space | bAb$
+
+    $A \space aSa \space | \space bSb \space | \space c$
 
 23. Completar las reglas de producción para la gramática. 
-
-    Realizado por: **Julio Monetti**
 
     Sea $G = (\lbrace A, B\rbrace, \lbrace a\rbrace, P, S)$ una gramática regular lineal a derecha que genera $L = \lbrace a^{2n} / n ≥ 0\rbrace$
 
@@ -237,11 +437,27 @@ graph TD;
 
     $A\rightarrow aB$                                                                      $A\rightarrow ? $
 
-    $B\rightarrow ?$
+    $B\rightarrow ?$​
+
+    ---
+
+    Realizado por: **Julio Monetti**
+
+    Una particularidad de este ejercicio: observar que en el lado derecho de las producciones el símbolo **NO** terminal aparece a la derecha del símbolo terminal, con la forma $A \rightarrow aB$ o $A \rightarrow a$.
+
+    Con las reglas de producciones hay que lograr obtener cadenas que tengan una cantidad par de $a$ de acuerdo a lo que especifica la definición formal del lenguaje.
+
+    Luego, es necesario obtener alguna estrategia para completar las reglas. Por ejemplo, y comenzando con la derivación de **$S$**, podríamos indicar que desde la derivación del axioma **$S$** se debe generar, lógicamente, una **combinación par** de símbolos $a$. Con lo cual, se derivamos $S \rightarrow aA$, significa que $A$  deberá derivar en una combinación impar de letras $A$. A continuación, en ambas reglas para derivar $A$ de la consigna, se deb asegurar que derivan en una cantidad impar de $a$. Una regla es directa $A \rightarrow a$, y en la otra regla interviene como símbolo a la derecha $B$ Derivando $A \rightarrow aB$, necesitando que $B$ también derive en una **cantidad de elementos pares de a**: $B \rightarrow aA$ (por derivar $A$ en una cantidad impar de $a$). Luego, queda:
+
+    $S\rightarrow \lambda$                                                                           $S \rightarrow aA$
+
+    $A\rightarrow aB$                                                                       $A\rightarrow a$
+
+    $B\rightarrow aA$
 
 24. *Completar las reglas de producción para la gramática.* 
 
-    Sea $G = ({A, B, C}, {0, 1, 2, 3}, P, S)$ *que genera*: $L = {0^i 1^{i+k} 2^k 3^{n+1} / i, k, n ≥ 0 }$ 
+    Sea $G = \lbrace \lbrace A, B, C\rbrace, \lbrace0, 1, 2, 3 \rbrace, P, S\rbrace$ *que genera*: $L = \lbrace 0^i 1^{i+k} 2^k 3^{n+1} / i, k, n ≥ 0 \rbrace$ 
 
     $S\rightarrow ABC$                                                                 $S\rightarrow ?$ 
 
@@ -252,6 +468,34 @@ graph TD;
     $B\rightarrow 1B2$                                                                  $B\rightarrow ?$ 
 
     $C\rightarrow 3C$                                                                    $C\rightarrow ?$ 
+
+    Algunas cadenas generadas por $L$:
+
+    |                       | $0^i$ | $1^{i+k}$ | $2^k$ | $3^{n+1}$ |
+    | --------------------- | ----- | --------- | ----- | --------- |
+    | $i = 0, k = 0, n = 0$ | λ     | λ         | λ     | 3         |
+    | $i = 0, k = 1, n = 0$ | λ     | 1         | 2     | 3         |
+    | $i = 0, k = 0, n = 1$ | λ     | λ         | λ     | 33        |
+    | $i = 0, k = 1, n = 1$ | λ     | 1         | 2     | 33        |
+    | $i = 1, k = 0, n = 0$ | 0     | 1         | λ     | 3         |
+    | $i = 1, k = 1, n = 0$ | 0     | 11        | 2     | 3         |
+    | $i = 1, k = 1, n = 1$ | 0     | 11        | 2     | 33        |
+
+    Para generar la cadena donde $i = 0, k = 0$ y $n = 0$ el axioma $S$ debe derivar en el símbolo no terminal $C$ para poder poner un o varios $3$. Por lo tanto, $C$ debe derivar en $3$.
+
+    $C \rightarrow 3$
+
+    Además, los símbolos no terminales $A$ y $B$ deben derivar en el símbolo terminal $λ$.
+
+    Las reglas de producción quedarían:$S\rightarrow ABC$                                                                 $S \rightarrow ABC$                                                                $S\rightarrow C$ 
+
+    $S\rightarrow BC$                                                                   $S\rightarrow ?$ 
+
+    $A\rightarrow 0A1$                                                                 $A\rightarrow λ$ 
+
+    $B\rightarrow 1B2$                                                                 $B\rightarrow λ$ 
+
+    $C\rightarrow 3C$                                                                   $C\rightarrow 3$
 
 25. Dibuje el diagrama sintáctico equivalente: 
 
