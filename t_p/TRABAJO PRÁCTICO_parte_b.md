@@ -354,7 +354,7 @@ graph TD
     - Diapositivas de la materia Lenguajes Formales, tipos de Gramática, Ambigüedad.
     - Libro Lenguajes Gramáticas y Autómatas de Isasi, Martinez y Borrajo - Capítulo 2 Lenguajes y Gramáticas Formales, pág. 18 a 20
 
-22. *Escriba las reglas de producción para la gramática* $G_1$, *no ambigua, que reconoce el lenguaje* $L_1$. $G_1 = (\lbrace A\rbrace, \lbrace a, b, c\rbrace, P, S_1)$ $L_1 = \lbrace wcw^{R} / w \in \lbrace a | b\rbrace \and R > 0\rbrace$ 
+22. *Escriba las reglas de producción para la gramática* $G_1$, *no ambigua, que reconoce el lenguaje* $L_1$. $G_1 = (\lbrace A\rbrace, \lbrace a, b, c\rbrace, P, S_1)$ $L_1 = \lbrace wcw^{R} / w \in \lbrace a | b\rbrace\and R > 0\rbrace$ 
 
     Palabras que se pueden formar con el lenguaje $L_1$ 
 
@@ -368,7 +368,7 @@ graph TD
 
     $abbcbba$
 
-    ```mermaid
+```mermaid
     graph TD;
     	S((S))-->a((a));
     	S((S))-->c((c));
@@ -378,9 +378,9 @@ graph TD
     	S1((S))-->c1((c));
     	S1((S))-->b1((b));
     
-    ```
+```
 
-    ```mermaid
+```mermaid
     graph TD;
     	S2((S))-->a2((a));
     	S2((S))-->A((A));
@@ -395,9 +395,9 @@ graph TD
     	A1((A))-->b2((b));
     	A1((A))-->c3((c));
     	A1((A))-->b3((b));
-    ```
+```
 
-    ```mermaid
+```mermaid
     graph TD;
     	S((S))-->a((a));
     	S((S))-->A((A));
@@ -408,27 +408,27 @@ graph TD
     	A1((A))-->b2((b));
     	A1((A))-->c((c));
     	A1((A))-->b3((b));
-    ```
+```
 
-    Por lo tanto, el axioma $S_1$ debe ser:
+   Por lo tanto, el axioma $S_1$ debe ser:
 
-    $S_1 \rightarrow aSa \space | \space bSb \space | \space A$
+   $S_1 \rightarrow aSa \space | \space bSb \space | \space A$
 
-    y el símbolo no terminal debe generar:
+   y el símbolo no terminal debe generar:
 
-    $A \rightarrow c$
+​	$A \rightarrow c$
 
-    Otras opciones válidas son:
+   Otras opciones válidas son:
 
-    $S_1 \rightarrow aAa \space | \space bAb$
+   $S_1 \rightarrow aAa \space | \space bAb$
 
-    $A \rightarrow aAa \space | \space bAb \space | \space c$
+   $A \rightarrow aAa \space | \space bAb \space | \space c$
 
-    o:
+   o:
 
-    $S_1 \rightarrow aAa \space | bAb$
+   $S_1 \rightarrow aAa \space | bAb$
 
-    $A \space aSa \space | \space bSb \space | \space c$
+   $A \space aSa \space | \space bSb \space | \space c$
 
 23. Completar las reglas de producción para la gramática. 
 
@@ -540,33 +540,29 @@ graph TD
 
     ![exercise_28](https://github.com/3dl3rw0lf/ssl/blob/main/t_p/img/exercise_28.png)
 
-    ***BNF***:
-
-    La expresión en EBNF que proporcionaste es:
-
-    ```ebnf
-    Named constant ::= "const" {<Identifier> "=" ["+" | "-"] <Identifier>}+
-    ```
-
-    Para convertir esta expresión a BNF (Backus-Naur Form), necesitamos eliminar las notaciones de repetición `{}` y opción `[]` que son características de EBNF (Extended Backus-Naur Form). Aquí está la conversión:
-
-    ```bnf
-    <Named constant> ::= "const" <Identifier List>
-    <Identifier List> ::= <Identifier> "=" <Sign> <Identifier> | <Identifier> "=" <Sign> <Identifier> <Identifier List>
-    <Sign> ::= "+" | "-" | <empty>
-    ```
-
-    En esta versión BNF, `<Named constant>` se define como `"const"` seguido de una lista de identificadores `<Identifier List>`. `<Identifier List>` puede ser un solo identificador o una secuencia de identificadores. `<Sign>` puede ser `"+"`, `"-"` o vacío (representado por `<empty>`), lo que indica que el signo es opcional.
-
-    Espero que esto te ayude. Si tienes más preguntas, no dudes en preguntar. 😊
-
-    ​              
-
-    `Named constant::="const"`
-
     ***EBNF***:
 
     `Named constant::="const"{<Identifier>"="["+"|"-"]<Identifier>}+`
+
+    ***BNF***:
+    
+    La expresión en EBNF  es:
+
+    ```ebnf
+Named constant ::= "const" {<Identifier> "=" ["+" | "-"] <Identifier>}+
+    ```
+    
+    Para convertir esta expresión a BNF (Backus-Naur Form), necesitamos eliminar las notaciones de repetición `{}` y opción `[]` que son características de EBNF (Extended Backus-Naur Form). La conversión expresión resultante es:
+    
+    ```bnf
+<Named constant> ::= "const" <Identifier List>
+    <Identifier List> ::= <Identifier> "=" <Sign> <Identifier>
+<Sign> ::= "+" | "-" | <empty>
+    ```
+
+    En BNF, `<Named constant>` se define como `"const"` seguido de una lista de identificadores `<Identifier List>`. `<Identifier List>` puede ser un solo identificador `<Identifier>` o una secuencia de identificadores. `<Sign>` puede ser `"+"`, `"-"` o vacío (representado por `<empty>`), lo que indica que el signo es opcional.
+
+    *Diagrama alternativo*
 
     ![exercise_28_alternative_diagram](https://github.com/3dl3rw0lf/ssl/blob/main/t_p/img/exercise_28_alternative_diagram.png)
 
