@@ -141,7 +141,7 @@ $P=\lbrace e_0 \rightarrow ae_1,\space e_1 \rightarrow ae_1\space |\space ce_2,\
 
     Realizado por: **Romina Palmieri**
     
-    $P = \lbrace e_0 \rightarrow  a e_1, e_1 \rightarrow  a e_1 | c e_2, e_2 \rightarrow b e_2 \rbrace$
+    $P = \lbrace e_0 \rightarrow  a e_1, e_1 \rightarrow  a e_1 | c e_2, e_2 \rightarrow b e_2 \rbrace$​
     
     ```mermaid
     graph TD;
