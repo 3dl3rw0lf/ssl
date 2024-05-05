@@ -488,7 +488,7 @@ graph TD
 
     Además, los símbolos no terminales $A$ y $B$ deben derivar en el símbolo terminal $λ$.
 
-    Las reglas de producción quedarían:$S\rightarrow ABC$                                                                 $S \rightarrow ABC$                                                                $S\rightarrow C$ 
+    Las reglas de producción quedarían:                                                                $S \rightarrow ABC$                                                                $S\rightarrow C$ 
 
     $S\rightarrow BC$                                                                   $S\rightarrow ?$ 
 

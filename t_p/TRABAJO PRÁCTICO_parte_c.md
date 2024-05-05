@@ -32,16 +32,20 @@
 
     $q::=\text{'e'}<q>|\text{'b'}<q_j>|\text{b}$
 
-    $q_j::=\text{c}<q>$
+    $q_j::=\text{'c'}<q>$
 
-32. Para la siguiente expresión: $A.((A|B).C)^{*}.C$​ construya el *AEFD*. Realice la descripción en forma gráfica, funcional y tabular.
+32. Para la siguiente expresión: $A.((A|B).C)^{*}.C$​​ construya el *AEFD*. Realice la descripción en forma gráfica, funcional y tabular.
 
-    |      | A    | B    | C    |
-    | ---- | ---- | ---- | ---- |
-    | q0   | q1   |      |      |
-    | q1   | q2   | q3   |      |
-    | q2   |      |      | q1   |
-    | q1   |      |      | q3   |
+    *Forma tabular*
+
+    |      | A     | B     | C     |
+    | ---- | ----- | ----- | ----- |
+    | q0   | $q_1$ |       |       |
+    | q1   | $q_2$ | $q_2$ |       |
+    | q2   |       |       | $q_1$ |
+    | q1   |       |       | $q_3$ |
+
+    *Forma funcional*
 
     $f(q_0,A)\rightarrow q_1$
 
@@ -51,21 +55,98 @@
 
     $f(q_2,C)\rightarrow q_1$
 
-    $f(q_1,C)\rightarrow q_3$
+    $f(q_1,C)\rightarrow q_3$​
+
+    *Forma gráfica*
+
+    <img src="D:\UTN\ssl\TP_github\ssl\t_p\img\exercise_32.png" alt="exercise_32" style="zoom:33%;" />
+
+    ---
+
+    Realizado por: **Julio Monetti**
+
+    <img src="C:\Users\xang_\AppData\Roaming\Typora\typora-user-images\image-20240505155526599.png" alt="image-20240505155526599" style="zoom:49%;" />
+
+    $Q = \lbrace 1,2,3,4\rbrace$
+
+    $F = \lbrace 4 \rbrace$
+
+    Expresamos en forma funcional las transiciones observadas en el autómata. Por ejemplo:
+
+    $f(1,A)=3$
+
+    indica que estando en el estado **1** se transita al estado **3**, con la lectura de **$A$**. De la misma forma se completan las funciones restantes:
+
+    $f(2,A)= 3$
+
+    $f(2,B)= 3$
+
+    $f(2,C)= 4$
+
+    $f(3,C)= 2$
+
+    Estas funciones pueden ser volcadas en una matriz (forma matricial). En la matriz también se pueden visualizar las diferentes transiciones entre estados. Para ello se confecciona la matriz, listando por columna (en la primer fila) los diferencias símbolos que pueden ser leídos, y por filas ( en la primer columna) listando los diferencias estados que presenta el autómata.
+
+    Por último en el centro de la matriz, se indican las diferentes transiciones posibles. Por ejemplo:
+
+    Si desde **1** se puede transitar a **2**, leyendo **$A$**. Se coloca el estado destino **2** en la intersección de la fila/estado **1** y la columna/símbolo $A$, como sigue:
+
+    |      | $A$  | $B$  | $C$  |
+    | ---- | ---- | ---- | ---- |
+    | $1$  | $2$  | -    | -    |
+    | $2$  | $3$  | $3$  | $4$  |
+    | $3$  | -    | -    | $2$  |
+    | $4$  | -    | -    | -    |
+
+     Por último, se listan todas las relaciones posibles.
 
 33. Sea la expresión regular: $a^{*}.b.a^{*}.b.(a|b)^{*}$​ construya el *AEFD*. Realice la descripción en forma gráfica, funcional y tabular.
 
+    *Forma gráfica*
+
+    <img src="D:\UTN\ssl\TP_github\ssl\t_p\img\exercise_33.png" alt="exercise_33" style="zoom:33%;" />
+
+    *Forma funcional*
+
+    $f(q_0,a) \rightarrow q_0$
+
+    $f(q_0, b) \rightarrow q_1$
+
+    $f(q_1,a) \rightarrow q_1$
+
+    $f(q_1, b) \rightarrow q_2$
+
+    $f(q_2,a) \rightarrow q_2$
+
+    $f(q_2, b) \rightarrow q_2$
+
+    *Forma tabular*
+
+    |       | a     | b     |
+    | ----- | ----- | ----- |
+    | $q_0$ | $q_0$ | $q_1$ |
+    | $q_1$ | $q_1$ | $q_2$ |
+    | $q_2$ | $q_2$ | $q_2$ |
+
     
 
-34. Determine la expresión regular para: $\lbrace S \rightarrow bA, S \rightarrow aB, A \rightarrow aS, B \rightarrow bS\rbrace$
+34. Determine la expresión regular para: $\lbrace S \rightarrow bA, S \rightarrow aB, A \rightarrow aS, B \rightarrow bS\rbrace$​
 
-    CLase
-    
+    <img src="D:\UTN\ssl\TP_github\ssl\t_p\img\exercise_34.png" alt="exercise_34" style="zoom:33%;" />
+
+    Realizado en clase:
+
     $(ba|ab)^{+}$
-    
+
     $(a|b).(a|b)^{+}$​
+
+35. Describa el autómata para la siguiente gramática $G=\lbrace \lbrace S,A,B,C\rbrace,\lbrace x,y\rbrace, S, P\rbrace$ donde $P=\lbrace S\rightarrow xA, S\rightarrow yB, A \rightarrow xC, A \rightarrow yA, A\rightarrow \lambda, B \rightarrow xC, B\rightarrow yB, B \rightarrow \lambda, C \rightarrow \lambda \rbrace$
+
+    ---
+
+    Realizado por: **Pablo Wilkinson**
+
     
-35. Describa el autómata para la siguiente gramática $G=\lbrace \lbrace S,A,B,C\rbrace,\lbrace x,y\rbrace, S, P\rbrace$ donde $P=\lbrace S\rightarrow xA, S\rightarrow yB, A \rightarrow xC, A \rightarrow yA, A\rightarrow \lambda, B \rightarrow xC, B\rightarrow yB, B \rightarrow \lambda, C \rightarrow \lambda$  
 
 36. Dada la siguiente especificación, dibuje el autómata:
 
@@ -119,9 +200,9 @@
     | q0q1q2 | q1q2q3 |
     | q0q1q3 | q1q2~  |
     | q1q2q3 | q1q2~  |
+
     
-    
-    
+
 39. Obtenga el autómata equivalente mínimo para:
 
     <img src="https://github.com/3dl3rw0lf/ssl/blob/main/t_p/img/exercise_39.png" alt="exercise_39" style="zoom:33%;" />
