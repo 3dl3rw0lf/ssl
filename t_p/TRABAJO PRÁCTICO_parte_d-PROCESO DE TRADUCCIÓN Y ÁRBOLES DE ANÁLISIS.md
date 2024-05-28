@@ -97,22 +97,22 @@
 
     Con lo cual quedaría: `<Stm> ::= while '(' <Expr> ')' <Stm>`, el árbol correspondiente es:
 
-    ```mermaid
+```mermaid
     graph TD
     	Stm[Stm] --> while((while));
     	Stm[Stm] --> o_par(("'('"));
     	Stm[Stm] --> Expr[Expr];
     	Stm[Stm] --> c_par(("')'"));
     	Stm[Stm] --> Stm1[Stm]
-    ```
+```
 
-    La siguiente declaración es `x < y`, que es una `<Expr>`:
+   La siguiente declaración es `x < y`, que es una `<Expr>`:
 
     `Expr> ::= <Expr> ',' <Op Assign>`
 
     ​		`|<Op Assign>`
 
-    La `<Op Assign>` se define como:
+   La `<Op Assign>` se define como:
 
     `<Op Assign> ::= <Op If> '=' <Op Assign>`
     			`| <Op If> '+=' <Op Assign>`
@@ -127,43 +127,43 @@
     ​			`| <Op If> '<<=' <Op Assign>`
     ​			`| <Op If>`
 
-    La `<Op If>` está definida como:
+   La `<Op If>` está definida como:
 
     `<Op If> ::= <Op Or> '?' <Op If> ':' <Op If>`
     		`| <Op Or>`
 
-    Luego la `<Op Or>`:
+   Luego la `<Op Or>`:
 
     `<Op Or> ::= <Op Or> '||' <Op And>`
     		`| <Op And>`
 
-    La `<Op And`: 
+   La `<Op And`: 
 
     `<Op And> ::= <Op And> '&&' <Op BinOR>`
     		`| <Op BinOR>`
 
-    La `<Op BinOR>`:
+   La `<Op BinOR>`:
 
     `<Op BinOR> ::= <Op BinOr> '|' <Op BinXOR>`
     			`| <Op BinXOR>`
 
-    La `<Op BinXOR>`:
+   La `<Op BinXOR>`:
 
     `<Op BinXOR> ::= <Op BinXOR> '^' <Op BinAND>`
     			`| <Op BinAND>`
 
-    La `<BinAND>`:
+   La `<BinAND>`:
 
     `<Op BinAND> ::= <Op BinAND> '&' <Op Equate>`
     			`| <Op Equate>`
 
-    La `<Op Equate>`:
+   La `<Op Equate>`:
 
     `<Op Equate> ::= <Op Equate> '==' <Op Compare>`
     			`| <Op Equate> '!=' <Op Compare>`
     			`| <Op Compare>`
 
-    La `Op Compare`:
+   La `Op Compare`:
 
     `<Op Compare> ::= <Op Compare> '<' <Op Shift>`
     			`| <Op Compare> '>' <Op Shift>`
@@ -171,28 +171,28 @@
     			`| <Op Compare> '>=' <Op Shift>`
     			`| <Op Shift>`
 
-    En esta última se encuentra la necesaria: `<Op Compare> ::= <Op Compare> '<' <Op Shift>`
+   En esta última se encuentra la necesaria: `<Op Compare> ::= <Op Compare> '<' <Op Shift>`
 
-    Además `<Op Shift>`:
+   Además `<Op Shift>`:
 
     `<Op Shift> ::= <Op Shift> '<<' <Op Add>`
     			`| <Op Shift> '>>' <Op Add>`
     			`| <Op Add>`
 
-    La `<Op Add`:
+   La `<Op Add`:
 
     `<Op Add> ::= <Op Add> '+' <Op Mult>`
     		`| <Op Add> '-' <Op Mult>`
     		`| <Op Mult>`
 
-    La `<Op Mult>`:
+   La `<Op Mult>`:
 
     `<Op Mult> ::= <Op Mult> '*' <Op Unary>`
     			`| <Op Mult> '/' <Op Unary>`
     			`| <Op Mult> '%' <Op Unary>`
     			`| <Op Unary>`
 
-    La `<Op Unary>`:
+   La `<Op Unary>`:
 
     `<Op Unary> ::= '!' <Op Unary>`
     			`| '~' <Op Unary>`
@@ -208,14 +208,14 @@
     			`| sizeof '(' ID <Pointers> ')'`
     			`| <Op Pointer>`
 
-    La `<Op Pointer>`:
+   La `<Op Pointer>`:
 
     `<Op Pointer> ::= <Op Pointer> '.' <Value>`
     			`| <Op Pointer> '->' <Value>`
     			`| <Op Pointer> '[' <Expr> ']'`
     			`| <Value>`
 
-    El `<Value>`:
+   El `<Value>`:
     `<Value> ::= OctLiteral`
     		`| HexLiteral`
     		`| DecLiteral`
@@ -227,9 +227,9 @@
     		`| Id`
     		`| '(' <Expr> ')'`
 
-    Actualizando el árbol queda:
+   Actualizando el árbol queda:
 
-    ```mermaid
+   ```mermaid
     graph TD
     	Stm[Stm] --> while((while));
     	Stm[Stm] --> o_par(("'('"));
@@ -263,11 +263,11 @@
     	Value1[Value] --> StringLiteral1[StringLiteral];
     	StringLiteral[StringLiteral] --> y((y));
     	StringLiteral1[StringLiteral] --> x((x));
-    ```
+   ```
 
-    La próxima operación a evaluar es `if(x % 2 == 0) x = x + 1 else x = x + 2` partiendo del `<Stm>` correspondiente, utilizando `<Stm> ::= if '(' <Expr> ')' <Then Stm> else <Stm>`.Actualizando el árbol:
+   La próxima operación a evaluar es `if(x % 2 == 0) x = x + 1 else x = x + 2` partiendo del `<Stm>` correspondiente, utilizando `<Stm> ::= if '(' <Expr> ')' <Then Stm> else <Stm>`.Actualizando el árbol:
 
-    ```mermaid
+   ```mermaid
     graph TD
     	Stm[Stm] --> while((while));
     	Stm[Stm] --> o_par(("'('"));
@@ -309,11 +309,11 @@
     	Stm1[Stm] --> then_stm[Then Stm];
     	Stm1[Stm] --> else((else));
     	Stm1[Stm] --> Stm2[Stm];
-    ```
+   ```
 
-    Posteriormente, derivando `<Expr>` según la operación `x % 2 == 0`, `<Then Stm>` según `x = x + 1` y `<Stm>` según `s = x + 2`, se obtiene el árbol completo derivación:
+   Posteriormente, derivando `<Expr>` según la operación `x % 2 == 0`, `<Then Stm>` según `x = x + 1` y `<Stm>` según `s = x + 2`, se obtiene el árbol completo derivación:
 
-    ```mermaid
+   ```mermaid
     graph TD
     	%%Stm principal%%
     	Stm[Stm] --> while((while));
@@ -503,7 +503,7 @@
     	OpPointer11[Op Pointer] --> Value11[Value];
     	Value11[Value] --> DecLiteral12((DecLiteral));
     	DecLiteral12((DecLiteral)) --> two3((2));
-    ```
+   ```
 
     <!--Preguntar en consulta si de <Value> se deriva a ...Literal y posteriormente al valor-->
 
