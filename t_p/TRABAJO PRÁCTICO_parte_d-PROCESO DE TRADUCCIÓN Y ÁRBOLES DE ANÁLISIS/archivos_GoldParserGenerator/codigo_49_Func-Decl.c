@@ -1,0 +1,1 @@
+float miFuncion (float miArg) { }

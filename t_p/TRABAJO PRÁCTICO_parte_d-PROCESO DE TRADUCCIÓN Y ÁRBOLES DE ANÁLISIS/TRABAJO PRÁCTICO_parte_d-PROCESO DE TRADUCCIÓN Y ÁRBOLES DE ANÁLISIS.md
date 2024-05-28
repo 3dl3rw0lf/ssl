@@ -1551,7 +1551,7 @@
 
     <img src="https://github.com/3dl3rw0lf/ssl/blob/main/t_p/img/exercise_60_regex01_10.png" alt="exercise_60_regex01_10" style="zoom:49%;" />
 
-    <img src="D:\UTN\ssl\07.lenguajes_y_proceso_de_traducción\04.TP PT&AA\TP48571\img/exercise_60_regex01_js.png" alt="image-20240527221008628" style="zoom:49%;" />
+    <img src="https://github.com/3dl3rw0lf/ssl/blob/main/t_pimg/exercise_60_regex01_js.png" alt="image-20240527221008628" style="zoom:49%;" />
 
     ***Expresión regular:*** `/^([0-9\s\+\-])+$/ `
 
@@ -1583,4 +1583,14 @@
     } 
     ```
 
-    La versión anteriro funcionaba por que se realiza una asignación de memoria para los punteros a las cadenas de caracteres y se realiza la copia de los mismos.
+    La versión anterior funcionaba por que se realiza una asignación de memoria para los punteros a las cadenas de caracteres y se realiza la copia de los mismos.
+    
+    Error:
+
+<img src="https://github.com/3dl3rw0lf/ssl/blob/main/t_p/img/exercise_61_error01.png" style="zoom:49%;" />
+
+<img src="https://github.com/3dl3rw0lf/ssl/blob/main/t_p/img/exercise_61_error02.png" alt="exercise_61_error02" style="zoom:49%;" />
+
+​	Arreglo:
+
+<img src="https://github.com/3dl3rw0lf/ssl/blob/main/t_p/img/exercise_61_fixed.png" alt="exercise_61_fixed" style="zoom:49%;" />

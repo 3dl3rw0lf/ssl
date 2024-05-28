@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 60 REGEX 2</title>
+    <script language="javascript">
+		function expresion(){
+			var la_expre = /^([0-9\s\+\-])+$/ ;
+			var texto = prompt("Valor: ");
+			if ( la_expre.test(texto) )
+				alert('La cadena es válida');
+			else
+			    alert('La cadena NO es correcta');
+		}
+</script>
+</head>
+<body onLoad="expresion()">
+    <p>Validador de expresiones regulares</p>
+</body>
+</html>
