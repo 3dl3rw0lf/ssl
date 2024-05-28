@@ -97,22 +97,22 @@
 
     Con lo cual quedaría: `<Stm> ::= while '(' <Expr> ')' <Stm>`, el árbol correspondiente es:
 
-    ```mermaid
+```mermaid
     graph TD
     	Stm[Stm] --> while((while));
     	Stm[Stm] --> o_par(("'('"));
     	Stm[Stm] --> Expr[Expr];
     	Stm[Stm] --> c_par(("')'"));
     	Stm[Stm] --> Stm1[Stm]
-    ```
+```
 
-    La siguiente declaración es `x < y`, que es una `<Expr>`:
+   La siguiente declaración es `x < y`, que es una `<Expr>`:
 
     `Expr> ::= <Expr> ',' <Op Assign>`
 
     ​		`|<Op Assign>`
 
-    La `<Op Assign>` se define como:
+   La `<Op Assign>` se define como:
 
     `<Op Assign> ::= <Op If> '=' <Op Assign>`
     			`| <Op If> '+=' <Op Assign>`
@@ -127,43 +127,43 @@
     ​			`| <Op If> '<<=' <Op Assign>`
     ​			`| <Op If>`
 
-    La `<Op If>` está definida como:
+   La `<Op If>` está definida como:
 
     `<Op If> ::= <Op Or> '?' <Op If> ':' <Op If>`
     		`| <Op Or>`
 
-    Luego la `<Op Or>`:
+   Luego la `<Op Or>`:
 
     `<Op Or> ::= <Op Or> '||' <Op And>`
     		`| <Op And>`
 
-    La `<Op And`: 
+   La `<Op And`: 
 
     `<Op And> ::= <Op And> '&&' <Op BinOR>`
     		`| <Op BinOR>`
 
-    La `<Op BinOR>`:
+   La `<Op BinOR>`:
 
     `<Op BinOR> ::= <Op BinOr> '|' <Op BinXOR>`
     			`| <Op BinXOR>`
 
-    La `<Op BinXOR>`:
+   La `<Op BinXOR>`:
 
     `<Op BinXOR> ::= <Op BinXOR> '^' <Op BinAND>`
     			`| <Op BinAND>`
 
-    La `<BinAND>`:
+   La `<BinAND>`:
 
     `<Op BinAND> ::= <Op BinAND> '&' <Op Equate>`
     			`| <Op Equate>`
 
-    La `<Op Equate>`:
+   La `<Op Equate>`:
 
     `<Op Equate> ::= <Op Equate> '==' <Op Compare>`
     			`| <Op Equate> '!=' <Op Compare>`
     			`| <Op Compare>`
 
-    La `Op Compare`:
+   La `Op Compare`:
 
     `<Op Compare> ::= <Op Compare> '<' <Op Shift>`
     			`| <Op Compare> '>' <Op Shift>`
@@ -171,28 +171,28 @@
     			`| <Op Compare> '>=' <Op Shift>`
     			`| <Op Shift>`
 
-    En esta última se encuentra la necesaria: `<Op Compare> ::= <Op Compare> '<' <Op Shift>`
+   En esta última se encuentra la necesaria: `<Op Compare> ::= <Op Compare> '<' <Op Shift>`
 
-    Además `<Op Shift>`:
+   Además `<Op Shift>`:
 
     `<Op Shift> ::= <Op Shift> '<<' <Op Add>`
     			`| <Op Shift> '>>' <Op Add>`
     			`| <Op Add>`
 
-    La `<Op Add`:
+   La `<Op Add`:
 
     `<Op Add> ::= <Op Add> '+' <Op Mult>`
     		`| <Op Add> '-' <Op Mult>`
     		`| <Op Mult>`
 
-    La `<Op Mult>`:
+   La `<Op Mult>`:
 
     `<Op Mult> ::= <Op Mult> '*' <Op Unary>`
     			`| <Op Mult> '/' <Op Unary>`
     			`| <Op Mult> '%' <Op Unary>`
     			`| <Op Unary>`
 
-    La `<Op Unary>`:
+   La `<Op Unary>`:
 
     `<Op Unary> ::= '!' <Op Unary>`
     			`| '~' <Op Unary>`
@@ -208,14 +208,14 @@
     			`| sizeof '(' ID <Pointers> ')'`
     			`| <Op Pointer>`
 
-    La `<Op Pointer>`:
+   La `<Op Pointer>`:
 
     `<Op Pointer> ::= <Op Pointer> '.' <Value>`
     			`| <Op Pointer> '->' <Value>`
     			`| <Op Pointer> '[' <Expr> ']'`
     			`| <Value>`
 
-    El `<Value>`:
+   El `<Value>`:
     `<Value> ::= OctLiteral`
     		`| HexLiteral`
     		`| DecLiteral`
@@ -227,9 +227,9 @@
     		`| Id`
     		`| '(' <Expr> ')'`
 
-    Actualizando el árbol queda:
+   Actualizando el árbol queda:
 
-    ```mermaid
+   ```mermaid
     graph TD
     	Stm[Stm] --> while((while));
     	Stm[Stm] --> o_par(("'('"));
@@ -263,11 +263,11 @@
     	Value1[Value] --> StringLiteral1[StringLiteral];
     	StringLiteral[StringLiteral] --> y((y));
     	StringLiteral1[StringLiteral] --> x((x));
-    ```
+   ```
 
-    La próxima operación a evaluar es `if(x % 2 == 0) x = x + 1 else x = x + 2` partiendo del `<Stm>` correspondiente, utilizando `<Stm> ::= if '(' <Expr> ')' <Then Stm> else <Stm>`.Actualizando el árbol:
+   La próxima operación a evaluar es `if(x % 2 == 0) x = x + 1 else x = x + 2` partiendo del `<Stm>` correspondiente, utilizando `<Stm> ::= if '(' <Expr> ')' <Then Stm> else <Stm>`.Actualizando el árbol:
 
-    ```mermaid
+   ```mermaid
     graph TD
     	Stm[Stm] --> while((while));
     	Stm[Stm] --> o_par(("'('"));
@@ -309,11 +309,11 @@
     	Stm1[Stm] --> then_stm[Then Stm];
     	Stm1[Stm] --> else((else));
     	Stm1[Stm] --> Stm2[Stm];
-    ```
+   ```
 
-    Posteriormente, derivando `<Expr>` según la operación `x % 2 == 0`, `<Then Stm>` según `x = x + 1` y `<Stm>` según `s = x + 2`, se obtiene el árbol completo derivación:
+   Posteriormente, derivando `<Expr>` según la operación `x % 2 == 0`, `<Then Stm>` según `x = x + 1` y `<Stm>` según `s = x + 2`, se obtiene el árbol completo derivación:
 
-    ```mermaid
+   ```mermaid
     graph TD
     	%%Stm principal%%
     	Stm[Stm] --> while((while));
@@ -503,7 +503,7 @@
     	OpPointer11[Op Pointer] --> Value11[Value];
     	Value11[Value] --> DecLiteral12((DecLiteral));
     	DecLiteral12((DecLiteral)) --> two3((2));
-    ```
+   ```
 
     <!--Preguntar en consulta si de <Value> se deriva a ...Literal y posteriormente al valor-->
 
@@ -827,7 +827,7 @@
 
     `a > c && !(x != y) || m < -- p` 
 
-    ```mermaid
+   ```mermaid
     graph TD
     	or(("||"))-->and((&&));
     	or(("||"))-->less((<));
@@ -847,13 +847,13 @@
     	less((<))-->minus(("--"));
     	minus(("--"))-->p((p));
     	p((p))-->sixtyfour((64));
-    ```
+   ```
 
     
 
     `(c++ * --b)` 
 
-    ```mermaid
+   ```mermaid
     graph TD
     	asteric((*))-->c((c));
     	c((c))-->seven((7));
@@ -861,11 +861,11 @@
     	asteric((*))-->minus(("--"));
     	minus(("--"))-->b((b));
     	b((b))-->two((2));
-    ```
+   ```
 
     `m += b + 5` 
 
-    ```mermaid
+   ```mermaid
     graph TD
     
     
@@ -875,11 +875,11 @@
     plus((+))-->b((b));
     b((b))-->two((2));
     plus((+))-->five((5));
-    ```
+   ```
 
     `(!p && m) + r`
 
-    ```mermaid
+   ```mermaid
     graph TD
     plus((+))-->and((&&));
     plus((+))-->r((r));
@@ -889,11 +889,11 @@
     p((p))-->sixtyfour((64));
     and((&&))-->m((m));
     m((m))-->B(('B'));
-    ```
+   ```
 
     `x / c * y + 3.5 - d % 3` 
 
-    ```mermaid
+   ```mermaid
     graph TD
     	minus(("-"))-->plus((+));
     	minus(("-"))-->resto((%));
@@ -909,11 +909,11 @@
     	resto((%))-->d((d));
     	d((d))-->minus_four(("-4"));
     	resto((%))-->three1((3));
-    ```
+   ```
 
     `b > c > d `
 
-    ```mermaid
+   ```mermaid
     graph TD
     	greater((>))-->greater1((>));
     	greater((>))-->d((d));
@@ -922,11 +922,11 @@
     	b((b))-->two((2));
     	greater1((>))-->c((c));
     	c((c))-->seven((7));
-    ```
+   ```
 
     `b = c ? 2 : 4`
 
-    ```mermaid
+   ```mermaid
     graph TD
     	eq((=))-->b((b));
     	b((b))-->two((2))
@@ -936,7 +936,7 @@
     	if((?))-->opt((:));
     	opt((:))-->two1((2));
     	opt((:))-->four((4));
-    ```
+   ```
 
 53. Dibujar el árbol para la expresión (x+y*z)+y luego eliminar la recursividad a izquierda y dibujar el nuevo árbol. 
 
@@ -954,7 +954,7 @@
 
     $Id \rightarrow x|y|z$​
 
-    ```mermaid
+   ```mermaid
     graph TD;
     	E((E))-->E1((E));
     	E1((E))-->T((T));
@@ -982,7 +982,7 @@
     	T1((T))-->F1((F));
     	F1((F))-->Id((Id));
     	Id((Id))-->y((y));
-    ```
+   ```
 
     **Eliminar recursividad**
 
@@ -990,7 +990,7 @@
 
     **<u>GRAMÁTICA DEL LENGUAJE</u>**
 
-    `````` 
+   ``` 
     rutina ::= identifierparameter_list 
     parameter_list ::= "(" defparameter {"," defparameter}* | ("&" identifier { "," "&" identifier}* 
     defparameter ::= parameter ["=" expression] 
@@ -1005,21 +1005,21 @@
     lambda_form ::= "lambda" 
     lowercase ::= "a"|"b"|...|"z" 
     uppercase ::= "A"|"B"|...|"Z" 
-    ``````
+   ```
 
     **<u>EJEMPLOS</u>**
 
-    ```
+   ```
     algo_1(alfa = or_test, Beta = lambda)        // válido
     algo_1(alfa = or_test, &Beta)                // inválido
     algo_1(alfa = or_test, _Beta = lambda)       // inválido
-    ```
+   ```
 
-    > Los errores que aparecen en algunos de los siguientes programas pueden ocurrir durante el proceso de compilación o interpretación según el lenguaje, algunos no se detectan hasta la etapa de ejecución y otros nunca se detectan, pero los programas muestran resultados erróneos.
+   > Los errores que aparecen en algunos de los siguientes programas pueden ocurrir durante el proceso de compilación o interpretación según el lenguaje, algunos no se detectan hasta la etapa de ejecución y otros nunca se detectan, pero los programas muestran resultados erróneos.
 
 55. Verifique si compilan y ejecutan correctamente los siguientes programas, luego corrija el error y pruebe de nuevo el programa (verifique que el resultado que muestran es el correcto). Califique los errores en de tipo léxico, sintáctico o semántico.
 
-    ```c++
+   ```c++
     #include<iostream>
     using namespace std;
     #define uno 1
@@ -1029,39 +1029,38 @@
     int main() {
     	a = dos;
     }
-    ```
+   ```
 
-    Realizado por: ***Julio Monetti*** 
+   Realizado por: ***Julio Monetti*** 
 
-    Los siguientes ejercicios los vamos a probar en un *IDE* para *C*, como zinjai, devC, o cualquier otro que nos permita crear un programa *C/C++*
+   Los siguientes ejercicios los vamos a probar en un *IDE* para *C*, como zinjai, devC, o cualquier otro que nos permita crear un programa *C/C++*
 
-    La línea `1` incluye la librería *iostream* que permite utilizar funciones de entrada-salida en el código fuente siguiente.
+   La línea `1` incluye la librería *iostream* que permite utilizar funciones de entrada-salida en el código fuente siguiente.
 
-    Las líneas `3` y `4`  definen dos constantes `uno`, y `dos` que valen `1` y `2` respectivamente.
+   Las líneas `3` y `4`  definen dos constantes `uno`, y `dos` que valen `1` y `2` respectivamente.
 
-    En la línea `5`  se declara una variable `a` del tipo entera; y en la línea `6` se asigna la constante `uno` a la variable `a`.
+   En la línea `5`  se declara una variable `a` del tipo entera; y en la línea `6` se asigna la constante `uno` a la variable `a`.
 
-    Entre las líneas `7` y `9` se encuentra la función/programa principal `main()`. En el mismo, en la línea `8` se asigna a la variable `a`, la constante `dos` (valor `2`).
+   Entre las líneas `7` y `9` se encuentra la función/programa principal `main()`. En el mismo, en la línea `8` se asigna a la variable `a`, la constante `dos` (valor `2`).
 
-    El problema de este código es que en la línea `6`, al no encontrarse dentro de un bloque de código ejecutable o función, no es posible realizar la asignación (que corresponde a una instrucción ejecutable).
+   El problema de este código es que en la línea `6`, al no encontrarse dentro de un bloque de código ejecutable o función, no es posible realizar la asignación (que corresponde a una instrucción ejecutable).
 
-    Al intentar compilar vemos que se presenta un  error de tipo **sintáctico** y el programa no compilará hasta corregirlo.
+   Al intentar compilar vemos que se presenta un  error de tipo **sintáctico** y el programa no compilará hasta corregirlo.
 
-    <img src="https://github.com/3dl3rw0lf/ssl/blob/main/t_p/img/exercise_55-a1.png" alt="image-20240525155302542" style="zoom:70%;" />
+   <img src="https://github.com/3dl3rw0lf/ssl/blob/main/t_p/img/exercise_55-a1.png" alt="image-20240525155302542" style="zoom:70%;" />
 
-    <img src="https://github.com/3dl3rw0lf/ssl/blob/main/t_p/img/exercise_55-a2.png" alt="image-20240525155336735" style="zoom:49%;" />
-
+   <img src="https://github.com/3dl3rw0lf/ssl/blob/main/t_p/img/exercise_55-a2.png" alt="image-20240525155336735" style="zoom:49%;" />
     Corrección realizada por: ***Guastavo Arauz***
 
-    Para realizar la corrección del error se procede a inicializar a la variable `a` con el valor `1` en el momento de la declaración en la línea `7`.
+   Para realizar la corrección del error se procede a inicializar a la variable `a` con el valor `1` en el momento de la declaración en la línea `7`.
 
-    <img src="https://github.com/3dl3rw0lf/ssl/blob/main/t_p/img/exercise_55-a1-fix.png" alt="exercise_55-a1-fix" style="zoom:49%;" />
+   <img src="https://github.com/3dl3rw0lf/ssl/blob/main/t_p/img/exercise_55-a1-fix.png" alt="exercise_55-a1-fix" style="zoom:49%;" />
 
-    <img src="https://github.com/3dl3rw0lf/ssl/blob/main/t_p/img/exercise_55-a2-fix.png" alt="exercise_55-a2-fix" style="zoom:42%;" />
+   <img src="https://github.com/3dl3rw0lf/ssl/blob/main/t_p/img/exercise_55-a2-fix.png" alt="exercise_55-a2-fix" style="zoom:42%;" />
 
-    ---
+   ---
 
-    ```c++
+   ```c++
     #include <iostream>
     using namespace std;
     void foo(){
@@ -1072,37 +1071,37 @@
     	int j;
     	for (j = 0; j < 10; j++) foo();
     } 
-    ```
+   ```
 
-    La línea `1` incluye la librería *iostream* que permite utilizar funciones de entrada-salida en el código fuente siguiente.
+   La línea `1` incluye la librería *iostream* que permite utilizar funciones de entrada-salida en el código fuente siguiente.
 
-    Entre las líneas `3` y `6` se encuentra la función `foo()` (que es llamada por la función principal en la línea `9`). En `foo()` se declara una variable entera `i` (línea `4`).
+   Entre las líneas `3` y `6` se encuentra la función `foo()` (que es llamada por la función principal en la línea `9`). En `foo()` se declara una variable entera `i` (línea `4`).
 
-    En la línea `5` se utiliza el operador `cout` para imprimir la variable `i` por pantalla, y a continuación se concatena a través del operador  `<<` la constante `endl`, la cual imprime un retorno de línea en la salida. En la misma instrucción, también se incrementa al final la variable `i` en 1, a través del operador de post-incremento `++`.
+   En la línea `5` se utiliza el operador `cout` para imprimir la variable `i` por pantalla, y a continuación se concatena a través del operador  `<<` la constante `endl`, la cual imprime un retorno de línea en la salida. En la misma instrucción, también se incrementa al final la variable `i` en 1, a través del operador de post-incremento `++`.
 
-    En este caso está presente un error de tipo semántico, ya que la variable `i` no está inicializada  y la misma se declara dentro de la función que es llamada 10 veces por `foo()`. En este caso no se puede predecir el comportamiento del programa, con lo cual se concluye en un error del tipo **semántico**.
+   En este caso está presente un error de tipo semántico, ya que la variable `i` no está inicializada  y la misma se declara dentro de la función que es llamada 10 veces por `foo()`. En este caso no se puede predecir el comportamiento del programa, con lo cual se concluye en un error del tipo **semántico**.
 
-    *Nota*: compilando el archivo en el programa Clion, y en el [Online_c_compiler](https://www.onlinegdb.com/online_c_compiler#) (Online GBD) el programa se ejecuta con algunas advertencias de la falta de inicialización de la variable `i` y mostrando los números del `0` al `9`. Lo cual es incorrecto para la ejecución.
+   *Nota*: compilando el archivo en el programa Clion, y en el [Online_c_compiler](https://www.onlinegdb.com/online_c_compiler#) (Online GBD) el programa se ejecuta con algunas advertencias de la falta de inicialización de la variable `i` y mostrando los números del `0` al `9`. Lo cual es incorrecto para la ejecución.
 
-    <img src="https://github.com/3dl3rw0lf/ssl/blob/main/t_p/img/exercise_55-b1_error00.png" alt="exercise_55-b1_error00" style="zoom:50%;" />
+   <img src="https://github.com/3dl3rw0lf/ssl/blob/main/t_p/img/exercise_55-b1_error00.png" alt="exercise_55-b1_error00" style="zoom:50%;" />
 
-    <img src="https://github.com/3dl3rw0lf/ssl/blob/main/t_p/img/exercise_55-b1_error.png" alt="exercise_55-b1_error" style="zoom:50%;" />
+   <img src="https://github.com/3dl3rw0lf/ssl/blob/main/t_p/img/exercise_55-b1_error.png" alt="exercise_55-b1_error" style="zoom:50%;" />
 
-    <img src="https://github.com/3dl3rw0lf/ssl/blob/main/t_p/img/exercise_55-b1_error02.png" alt="exercise_55-b1_error02" style="zoom:50%;" />
+   <img src="https://github.com/3dl3rw0lf/ssl/blob/main/t_p/img/exercise_55-b1_error02.png" alt="exercise_55-b1_error02" style="zoom:50%;" />
 
-    Sólo en el programa *Zinjai* se ve que el funcionamiento es erróneo debido a la basura que imprime la consola.
+   Sólo en el programa *Zinjai* se ve que el funcionamiento es erróneo debido a la basura que imprime la consola.
 
-    <img src="https://github.com/3dl3rw0lf/ssl/blob/main/t_p/img/exercise_55-b1_error03.png" style="zoom:50%;" />
+   <img src="https://github.com/3dl3rw0lf/ssl/blob/main/t_p/img/exercise_55-b1_error03.png" style="zoom:50%;" />
 
-    Corrección de error.
+   Corrección de error.
 
-    <img src="https://github.com/3dl3rw0lf/ssl/blob/main/t_p/img/exercise_55-b1_fix00.png" style="zoom:50%;" />
+   <img src="https://github.com/3dl3rw0lf/ssl/blob/main/t_p/img/exercise_55-b1_fix00.png" style="zoom:50%;" />
 
-    La ejecución correcta del código se da inicializando la variable `i` con el valor `0`. Lo cual produce que cada vez que la función `foo()` es llamada por el bucle `for` desde el `main` se imprima `0` en la consola.
+   La ejecución correcta del código se da inicializando la variable `i` con el valor `0`. Lo cual produce que cada vez que la función `foo()` es llamada por el bucle `for` desde el `main` se imprima `0` en la consola.
 
-    Si la ejecución esperada es que se muestren los números del `0` al `9` por consola cada vez que la función `foo()` es llamada, se debe hacer la declaración de la variable y su inicialización de manera global.
+   Si la ejecución esperada es que se muestren los números del `0` al `9` por consola cada vez que la función `foo()` es llamada, se debe hacer la declaración de la variable y su inicialización de manera global.
 
-    <img src="https://github.com/3dl3rw0lf/ssl/blob/main/t_p/img/exercise_55-b1_fix01.png" style="zoom:50%;" />
+   <img src="https://github.com/3dl3rw0lf/ssl/blob/main/t_p/img/exercise_55-b1_fix01.png" style="zoom:50%;" />
 
 56. Verifique si compilan y ejecutan correctamente los siguientes programas, luego corrija el error y pruebe de nuevo el programa (verifique que el resultado que muestran es el correcto). Califique los errores en de tipo léxico, sintáctico o semántico. 
 
