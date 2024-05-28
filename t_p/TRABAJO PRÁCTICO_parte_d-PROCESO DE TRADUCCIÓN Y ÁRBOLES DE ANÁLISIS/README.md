@@ -2,7 +2,7 @@ Debido a la limitación del tamaño `.zip` a entregar, se decide la entrega en f
 
 Se optó por este formato debido a que el documento original está realizado en el lenguaje de marcado ligero *Markdown*. El editor utilizado cuenta con la opción de exportar a diferentes formatos, `.docx`, `.pdf`, `.html`,  entre otros. Los dos primeros generan archivos que exceden el límite permitido. El archivo `.html` generado es menor a los 800MB.
 
-El archivo original `.md` se puede consultar en [github]().
+El archivo original `.md` se puede consultar en [github](https://github.com/3dl3rw0lf/ssl/tree/main/t_p/TRABAJO%20PRÁCTICO_parte_d-PROCESO%20DE%20TRADUCCIÓN%20Y%20ÁRBOLES%20DE%20ANÁLISIS).
 
 La estructura del directorio es la siguiente
 
