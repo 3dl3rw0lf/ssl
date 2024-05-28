@@ -146,7 +146,11 @@
 
     Realizado por: **Pablo Wilkinson**
 
-    
+    <img src="D:\UTN\ssl\TP_github\ssl\t_p\img\exercise_35.png" alt="exercise_35" style="zoom:33%;" />
+
+    Aclaración:
+
+    Cuando se indica que $A \rightarrow \lambda$, $B \rightarrow \lambda$, $C \rightarrow \lambda$ significa que los estados $A$,$B$, y $C$ del *AF* deberán ser finales, por tanto, marcados con doble círculo concéntrico.
 
 36. Dada la siguiente especificación, dibuje el autómata:
 
@@ -162,30 +166,168 @@
 
     $F=\lbrace e_2\rbrace$
 
-    
+    Ejemplos de cadena generadas
+
+    |                         | $a^n$ | c    | $b^m$     |
+    | ----------------------- | ----- | ---- | --------- |
+    | $ n = 1  \wedge  m = 0$ | $a$   | $c$  | $\lambda$ |
+    | $n = 1 \wedge m = 1$    | $a$   | $c$  | $b$       |
+    | $n = 2 \wedge m = 0$    | $aa$  | $c$  | $\lambda$ |
+    | $n = 2 \wedge m = 1$    | $aa$  | $c$  | $b$       |
+    | $n = 2 \wedge m = 2$    | $aa$  | $c$  | $bb$      |
+
+    <img src="D:\UTN\ssl\TP_github\ssl\t_p\img\exercise_36.png" alt="exercise_36" style="zoom:33%;" />
 
 37.  Obtenga el *AFD* equivalente para el *AFND*, dibuje el autómata *AFD* indicando a cuáles nodos del *AFND* representa cada nodo. Describa la tabla completa de transiciones $P(Q)$.
 
-     <img src="https://github.com/3dl3rw0lf/ssl/blob/main/t_p/img/exercise_37.png" alt="exercise_37" style="zoom:33%;" />
+     <img src="https://github.com/3dl3rw0lf/ssl/blob/main/t_p/img/exercise_37.png" alt="exercise_37" style="zoom:70%;" />
 
-     <img src="D:\UTN\ssl\TP_github\ssl\t_p\img\exercise_37.png" alt="exercise_37" style="zoom:33%;" />
+     <img src="D:\UTN\ssl\TP_github\ssl\t_p\img\exercise_37.png" alt="exercise_37" style="zoom:70%;" />
 
-     |          | a      | b    |
-     | -------- | ------ | ---- |
-     | >q0      | q0q1   | q0   |
-     | q1       | q1     | q2   |
-     | ~~*q2~~  | q1q2   | -    |
-     | q0q1     | q0q1   | q2   |
-     | q0q2     | q0q1q2 | q0   |
-     | ~~q1q2~~ | q1q2   | q2   |
-     | q0q1q2   | q0q1q2 | q0q2 |
-     |          |        |      |
+     Realizado por: **Mauricio Fariello**
 
+     Tabla completa de transiciones $P(Q)$
+
+     | $P(Q)$                | $a$                   | $b$                   |
+     | --------------------- | --------------------- | --------------------- |
+     | ~~$\lbrace \rbrace$~~ | ~~$\lbrace \rbrace$~~ | ~~$\lbrace \rbrace$~~ |
+     | $ \rightarrow q_0$    | $q_0q_1$              | $q_0$                 |
+     | ~~$q_1$~~             | ~~$q_1$~~             | ~~$q_2$~~             |
+     | ~~$*q2$~~             | ~~$q_1q_2$~~          | -                     |
+     | $q_0q_1$              | $q_0q_1$              | $q_2$                 |
+     | ~~$q_1q_2$~~          | ~~$q_1q_2$~~          | ~~$q_2$~~             |
+     | $*q_0q_2$             | $q_0q_1q_2$           | $q_0$                 |
+     | $*q_0q_1q_2$          | $q_0q_1q_2$           | $q_0q_2$              |
+
+     ***Autómata AFD equivalente***
+
+     <img src="D:\UTN\ssl\TP_github\ssl\t_p\img\exercise_37_r.png" alt="exercise_37_r" style="zoom:56%;" />
+
+     Explicación:
+
+     + Los siguientes son los pasos para armar el *AFD* partiendo de un *AFND* utilizando la *Tabla de transiciones* completa
+
+       1. Armar la tabla de transición del autómata (sin lambda si la hubiese).
      
+          | $P(Q)$            | $a$               | $b$               |
+          | ----------------- | ----------------- | ----------------- |
+          | $\lbrace \rbrace$ | $\lbrace \rbrace$ | $\lbrace \rbrace$ |
+          | ►$q_0$            | $q_0q_1$          | $q_0$             |
+          | $q_1$             | $q_1$             | $q_2$             |
+          | $*q_2$            | $q_1q_2$          | -                 |
+
+       2. Completar la tabla con la "*tabla completa*" de transición del Autómata: agregar un fila con cada subconjunto de estados combinados y completar las celdas con los estados alcanzables. Incluir en la primera fila el estado de "*captación global*".
+     
+          | $P(Q)$            | $a$               | $b$               |
+          | ----------------- | ----------------- | ----------------- |
+          | $\lbrace \rbrace$ | $\lbrace \rbrace$ | $\lbrace \rbrace$ |
+          | $►q_0$            | $q_0q_1 $         | $q_0$             |
+          | $q_1$             | $q_1$             | $q_2$             |
+          | $*q_2$            | $q_1q_2$          | -                 |
+          | $q_0q_1$          | $q_0q_1$          | $q_0q_2$          |
+          | $q_1q_2$          | $q_1q_2$          | $q_2$             |
+          | $q_0q_2$          | $q_0q_1q_2$       | $q_0$             |
+          | $q_0q_1q_2$       | $q_0q_1q_2$       | $q_0q_2$          |
+
+       3. Marcar como estados finales todo aquel subconjunto que tengan algún estado final en sus filas.
+     
+          | $P(Q)$            | $a$               | $b$               |
+          | ----------------- | ----------------- | ----------------- |
+          | $\lbrace \rbrace$ | $\lbrace \rbrace$ | $\lbrace \rbrace$ |
+          | $►q_0$            | $q_0q_1$          | $q_0$             |
+          | $q_1$             | $q_1$             | $q_2$             |
+          | $*q_2$            | $q_1q_2$          | -                 |
+          | $q_0q_1$          | $q_0q_1$          | $q_0q_2$          |
+          | $q_1q_2$          | $q_1q_2$          | $q_2$             |
+          | $*q_0q_2$         | $q_0q_1q_2$       | $q_0$             |
+          | $*q_0q_1q_2$      | $q_0q_1q_2$       | $q_0q_2$          |
+
+       4. Eliminar las filas de los estados finales no alcanzables.
+     
+          | $P(Q)$              | $a$               | $b$               |
+          | ------------------- | ----------------- | ----------------- |
+          | ◄►$\lbrace \rbrace$ | $\lbrace \rbrace$ | $\lbrace \rbrace$ |
+          | $►q_0$              | $q_0q_1$          | $q_0$             |
+          | ◄►$q_1$             | $q_1$             | $q_2$             |
+          | ◄►$*q_2$            | $q_1q_2$          | -                 |
+          | $q_0q_1$            | $q_0q_1$          | $q_0q_2$          |
+          | $q_1q_2$            | $q_1q_2$          | $q_2$             |
+          | $*q_0q_2$           | $q_0q_1q_2$       | $q_0$             |
+          | $*q_0q_1q_2$        | $q_0q_1q_2$       | $q_0q_2$          |
+
+       5. Eliminar las filas de los estado alcanzados **solo** por los eliminados en el paso previo,
+     
+          | $P(Q)$              | $a$               | $b$               |
+          | ------------------- | ----------------- | ----------------- |
+          | ◄►$\lbrace \rbrace$ | $\lbrace \rbrace$ | $\lbrace \rbrace$ |
+          | $►q_0$              | $q_0q_1$          | $q_0$             |
+          | ◄►$q_1$             | $q_1$             | $q_2$             |
+          | ◄►$*q_2$            | $q_1q_2$          | -                 |
+          | $q_0q_1$            | $q_0q_1$          | $q_0q_2$          |
+          | ◄►$q_1q_2$          | $q_1q_2$          | $q_2$             |
+          | $*q_0q_2$           | $q_0q_1q_2$       | $q_0$             |
+          | $*q_0q_1q_2$        | $q_0q_1q_2$       | $q_0q_2$          |
+
+       6. De existir, eliminar las filas de los estados cuyas filas estén duplicadas. No hay en este ejercicio.
+
+          Luego de eliminar todas las filas, la tabla nos queda así:
+     
+          | $P(Q)$       | $a$         | $b$      |
+          | ------------ | ----------- | -------- |
+          | $►q_0$       | $q_0q_1$    | $q_0$    |
+          | $q_0q_1$     | $q_0q_1$    | $q_0q_2$ |
+          | $*q_0q_2$    | $q_0q_1q_2$ | $q_0$    |
+          | $*q_0q_1q_2$ | $q_0q_1q_2$ | $q_0q_2$ |
+
+       7. Agrupar los estados con un nuevo nombre de estado y armar el grafo con la tabla resultante.
+
+          $q_0 \rightarrow q_0$
+
+          $q_0q_1 \rightarrow q_1$
+
+          $q_0q_2 \rightarrow q_2$
+
+          $q_0q_1q_2 \rightarrow q_3$
+     
+          | $P(Q)$ | $a$   | $b$   |
+          | ------ | ----- | ----- |
+          | $►q_0$ | $q1$  | $q_0$ |
+          | $q_1$  | $q_1$ | $q_2$ |
+          | $*q_2$ | $q_3$ | $q_0$ |
+          | $*q_3$ | $q_3$ | $q_2$ |
+          
+          ![exercise_37_r](D:\UTN\ssl\TP_github\ssl\t_p\img\exercise_37_r.png)
+     
+     + Los número dentro de los rectángulos de los nodos de *AFD* se encuentra indicando el o los nodos que representan el *AFND*. Por ejemplo, en el siguiente grafo el estado $q_1$ representa los estado $q_1$ y $q_2$. 
+     
+       <img src="C:\Users\xang_\AppData\Roaming\Typora\typora-user-images\image-20240509172127620.png" alt="image-20240509172127620" style="zoom:56%;" />
+     
+
+
+​     
 
 38. Obtenga el *AFD* equivalente para el *AFND*, dibuje el autómata *AFD* indicando a cuáles nodos del *AFND* original representa cada nodo.
 
     <img src="https://github.com/3dl3rw0lf/ssl/blob/main/t_p/img/exercise_38.png" style="zoom:33%;" />
+
+    <img src="D:\UTN\ssl\TP_github\ssl\t_p\img\exercise_38.png" style="zoom:33%;" />
+
+    |                   | a                 |
+    | ----------------- | ----------------- |
+    | $\lbrace \rbrace$ | $\lbrace \rbrace$ |
+    | ►$q_0$            | $q_1q_3$          |
+    | ◄►$q_1$           | $q_2$             |
+    | ◄►*$q_2$          | $q_1$             |
+    | $q_3$             | -                 |
+    | $q_0q_1$          | $q_1q_2q_3$       |
+    | ◄►$q_0q_3$        | $q_1$             |
+    | ◄►*$q_1q_2$       | $q_1q_2$          |
+    | ◄►$q_1q_3$        | $q_2$             |
+    | $q_0q_1q_3$       | $q_1q_2q_3$       |
+    | *$q_0q_1q_2$      | $q_1q_2q_3$       |
+    | *$q_1q_2q_3$      | $q_1q_2$          |
+
+    
 
     |        | a      |
     | ------ | ------ |
@@ -314,16 +456,44 @@
 44.  Definir los *APD* equivalentes que reconocen $L= \lbrace 1^{n}0^{n-1}/n \gt 0\rbrace$ por:
 
      1. vaciado de pila.
+
      2. por alcance del estado final.
+
      3. vaciado de pila y alcance del estado final.
+
+        La palabra más simple que tiene que reconocer el *APD* es cuando $n=1$, $1^10^{1-1} \rightarrow 1^10^0 \rightarrow 1$. Luego, las demás palabras tendrán un $0$ sera que la cantidad de $1$ en la palabra.
+
+        1. Vaciado de pila
+
+           ![exercise_44_empty_stack](D:\UTN\ssl\TP_github\ssl\t_p\img\exercise_44_empty_stack.png)
+
+        2. Alcance de estado final
+
+        3. Vaciado de pila y alcance de estado final
 
 45.  Definir los *APD* equivalentes que reconocen $L=\lbrace X^{n}Y^{n}/n \geq 0\rbrace$ por:
 
      1. vaciado de pila.
+
      2. alcance del estado final.
+
      3. vaciado de pila y alcance del estado final.
 
-46.  Defina el *APD* que reconoce el lenguaje $L= \lbrace x^{R}/R \text{es par} \gt 0\rbrace$ para la siguiente especificación:
+        La palabra más simple que se puede formar es cuando $n = 0$, $X^0Y^0 \rightarrow \lambda$, y luego, las palabras formadas tiene la misma cantidad de $X$  que de $Y$.
+
+        1. vaciado de pila
+
+           ![exercise_45_empty_stack](D:\UTN\ssl\TP_github\ssl\t_p\img\exercise_45_empty_stack.png)
+
+        2. alcance de estado final
+
+           
+
+        3. vaciado de pila y alcance del estado final
+
+           ![exercise_45_final_state](D:\UTN\ssl\TP_github\ssl\t_p\img\exercise_45_final_state.png)
+
+46.  Defina el *APD* que reconoce el lenguaje $L= \lbrace x^{R}/R\space \text{es par} \gt 0\rbrace$ para la siguiente especificación:
 
      $A=\lbrace \Sigma_e, \Gamma, Q, a_0,q_0,F,f,g\rbrace$
 
@@ -332,3 +502,7 @@
      $\lbrace q_0,q_1,q_2\rbrace:\text{conjunto de estados}\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space $# $\space : \text{símbolo inicial de la pila}$
 
      $\lbrace q_0\rbrace:\text{estado inicial}\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\lbrace q_2\rbrace : \text{estado final}$
+     
+     La cadena más simple generada es cuando $R = 2$, $x^2 \rightarrow xx$. Las cadenas siguientes estarán formadas por número pares de $x$.
+     
+     ![exercise_46_final_state_empty_stack](D:\UTN\ssl\TP_github\ssl\t_p\img\exercise_46_final_state_empty_stack.png)
