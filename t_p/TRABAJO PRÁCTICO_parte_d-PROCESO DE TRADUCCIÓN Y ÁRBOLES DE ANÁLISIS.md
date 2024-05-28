@@ -1,22 +1,4 @@
-<img class="img1" src="https://github.com/3dl3rw0lf/ssl/blob/main/t_p/img/encabezado" alt="image-20240526222853534" />
-
-<img class="img2" src="https://github.com/3dl3rw0lf/ssl/blob/main/t_p/img/utn.png" alt="UTN" />
-
-<style>
-    .centrado {text-align: center;}
-    .right {text-align: right;}
-    .img1 {position: absolute; top: 1rem; z-index: 1;}
-    .img2 {position: absolute; left: 2%; padding-top: 1.5rem; z-index: 10;}
-    .mt{margin-top:14rem;}
-    .steel_blue {color: SteelBlue;}
-    .dodger_blue {color: DodgerBlue;}
-    .black {color: black;}
-    .font{font-size: 1rem;}
-</style>
-
-
-
-<h1 class="centrado dodger_blue mt">PROCESO DE TRADUCCIÓN Y ÁRBOLES DE ANÁLISIS</h1>
+# PROCESO DE TRADUCCIÓN Y ÁRBOLES DE ANÁLISIS
 
 <p class="right steel_blue">Gustavo A. Arauz</p>
 
